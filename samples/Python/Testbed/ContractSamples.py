@@ -17,7 +17,7 @@ class ContractSamples:
         contract = Contract()
         contract.symbol = "EUR"
         contract.secType = "CASH"
-        contract.currency = "GBP"
+        contract.currency = "USD"
         contract.exchange = "IDEALPRO"
         #! [cashcontract]
         return contract
@@ -132,7 +132,7 @@ class ContractSamples:
     def USStock():
         #! [stkcontract]
         contract = Contract()
-        contract.symbol = "IBKR"
+        contract.symbol = "AAPL"
         contract.secType = "STK"
         contract.currency = "USD"
         #In the API side, NASDAQ is always defined as ISLAND in the exchange field

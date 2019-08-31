@@ -1,0 +1,16 @@
+(MainThread) 190830_21:14:51.110 DEBUG Trading.py:103 now is 2019-08-30 21:14:51.110875
+(MainThread) 190830_21:14:51.136 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:hfarm
+(MainThread) 190830_21:14:51.136 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190830_21:14:51.137 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:jfarm
+(MainThread) 190830_21:14:51.138 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfuture
+(MainThread) 190830_21:14:51.139 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190830_21:14:51.144 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190830_21:14:51.145 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190830_21:14:51.146 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190830_21:14:51.146 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds.nj
+(MainThread) 190830_21:14:51.147 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190830_21:14:51.147 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190830_21:14:51.148 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190830_21:14:51.474 ERROR wrapper.py:56 ERROR 503 399 Order Message:
+SELL 20K EUR.USD Forex
+Warning: your order will not be placed at the exchange until 2019-09-01 17:15:00 US/Eastern

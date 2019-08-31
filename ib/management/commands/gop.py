@@ -18,6 +18,8 @@ class Command(BaseCommand):
             url="www.ya.ru"
         )
         record.save()
-        pprint(Signal.objects.all())
+        # pprint(Signal.objects.all())
+
+        # print(str(options['id'])) # Works good
 
 

@@ -1,0 +1,1099 @@
+(MainThread) 190830_20:30:08.012 DEBUG Trading.py:103 now is 2019-08-30 20:30:08.012403
+(MainThread) 190830_20:30:08.037 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:hfarm
+(MainThread) 190830_20:30:08.038 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190830_20:30:08.039 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:jfarm
+(MainThread) 190830_20:30:08.039 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfuture
+(MainThread) 190830_20:30:08.040 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190830_20:30:08.040 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190830_20:30:08.042 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190830_20:30:08.043 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190830_20:30:08.044 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds.nj
+(MainThread) 190830_20:30:08.044 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190830_20:30:08.045 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190830_20:30:08.045 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190830_20:30:08.245 ERROR wrapper.py:56 ERROR 502 399 Order Message:
+SELL 20K EUR.USD Forex
+Warning: your order will not be placed at the exchange until 2019-09-01 17:15:00 US/Eastern
+(MainThread) 190830_21:13:59.317 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190830_21:13:59.398 ERROR wrapper.py:56 ERROR -1 1100 Connectivity between Zacks Trade and ZacksTrade Pro has been lost.
+(MainThread) 190830_21:13:59.709 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:usfarm.nj
+(MainThread) 190830_21:13:59.722 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:usfarm
+(MainThread) 190830_21:13:59.825 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:eufarm
+(MainThread) 190830_21:14:00.269 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190830_21:14:01.132 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:secdefil
+(MainThread) 190830_21:14:01.612 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:secdefil
+(MainThread) 190830_21:14:01.824 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:usfuture
+(MainThread) 190830_21:14:01.854 ERROR wrapper.py:56 ERROR 499 399 Order Message:
+SELL 20K EUR.USD Forex
+Warning: your order will not be placed at the exchange until 2019-09-01 17:15:00 US/Eastern
+(MainThread) 190830_21:14:01.859 ERROR wrapper.py:56 ERROR 500 399 Order Message:
+SELL 20K EUR.USD Forex
+Warning: your order will not be placed at the exchange until 2019-09-01 17:15:00 US/Eastern
+(MainThread) 190830_21:14:01.864 ERROR wrapper.py:56 ERROR 501 399 Order Message:
+SELL 20K EUR.USD Forex
+Warning: your order will not be placed at the exchange until 2019-09-01 17:15:00 US/Eastern
+(MainThread) 190830_21:14:01.870 ERROR wrapper.py:56 ERROR 502 399 Order Message:
+SELL 20K EUR.USD Forex
+Warning: your order will not be placed at the exchange until 2019-09-01 17:15:00 US/Eastern
+(MainThread) 190830_21:14:01.875 ERROR wrapper.py:56 ERROR -1 1102 Connectivity between Zacks Trade and ZacksTrade Pro has been restored - data maintained.
+(MainThread) 190830_21:14:01.876 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+BUY 1 IBM NYSE
+Warning: your order will not be placed at the exchange until 2019-08-30 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.105 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.109 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.110 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.113 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.116 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.119 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.122 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.124 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.126 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.132 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.136 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.137 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.139 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.141 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.142 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.144 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.146 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.149 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.158 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.163 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.172 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.175 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.183 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.186 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.189 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.195 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.196 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.197 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.200 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.202 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.204 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.208 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.228 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.236 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.238 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.241 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.244 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.247 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.250 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.253 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.256 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.258 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.260 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.263 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.282 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.284 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.286 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.289 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.291 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.294 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.297 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.299 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.302 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.304 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.307 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.309 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.311 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.314 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.315 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.318 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.320 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.322 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.324 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.326 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.329 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.331 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.334 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.336 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.341 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.345 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.350 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.354 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.357 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.360 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.362 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.365 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.368 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.371 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.374 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.376 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.378 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.380 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.381 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.383 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.388 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.391 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.393 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.394 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.398 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfuture
+(MainThread) 190830_21:14:02.399 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.400 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.403 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.406 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.411 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.413 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds.nj
+(MainThread) 190830_21:14:02.414 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.416 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.418 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.421 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.424 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.428 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.431 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.435 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.438 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.441 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.444 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.447 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.451 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.456 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.458 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.460 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.463 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.465 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.467 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.469 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.470 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.472 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.474 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.476 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.478 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.481 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.483 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.486 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.488 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.491 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.493 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.495 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.498 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.500 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.504 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.507 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.509 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.512 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.514 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.516 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.518 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.521 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.523 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.525 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.528 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.531 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.533 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.535 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.538 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.541 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.543 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.547 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.550 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.553 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.555 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.556 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.558 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.560 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.565 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.566 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.568 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.570 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.571 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.573 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.574 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.576 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.577 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.579 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.582 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.584 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.586 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.588 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.590 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.592 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.595 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.597 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.599 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.601 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.604 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.606 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.609 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.615 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.620 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.622 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.623 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.625 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.627 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.630 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.633 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.635 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.637 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.639 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.641 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.644 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.646 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.652 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.654 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.657 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.660 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.662 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.665 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.667 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.669 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.671 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.672 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.676 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.678 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.681 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.683 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.684 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.687 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.688 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.690 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.691 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.694 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190830_21:14:02.695 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.697 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.700 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.703 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.706 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.708 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.710 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.712 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.715 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.718 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.720 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.721 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.723 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.725 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.727 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.729 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.732 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.734 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.736 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.738 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.740 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.743 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.749 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.752 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.754 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.783 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.790 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.792 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.793 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.795 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.796 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.800 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.806 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.809 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.814 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.816 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.818 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.819 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.821 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.823 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.825 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.827 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.829 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.831 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.832 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.834 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.839 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.844 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.847 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.850 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.852 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.855 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.856 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.859 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.861 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.864 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.865 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.867 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.869 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.870 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.872 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.873 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.876 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.878 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.880 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.884 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.886 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.887 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.888 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.890 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.892 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.893 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.896 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.898 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.900 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.902 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.905 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.908 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.910 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.912 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.915 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.917 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.919 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.921 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.923 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.925 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.927 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.929 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.932 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.934 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.936 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.938 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.941 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.943 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.945 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.949 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.952 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.956 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.958 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.960 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.963 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.966 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.968 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.971 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.973 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.976 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.978 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.981 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.983 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.986 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.988 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.991 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.992 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.995 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:02.997 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.000 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.002 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.005 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.007 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.009 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.011 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.013 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.015 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.018 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.020 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.024 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.026 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.029 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.031 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.033 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.034 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.037 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.039 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.042 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.044 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.046 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.049 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.051 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.053 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.056 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.059 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 1 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190830_21:14:03.112 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds.nj
+(MainThread) 190830_21:14:03.192 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190830_21:14:03.386 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190830_21:14:03.915 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190830_21:14:04.023 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190830_21:14:07.550 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190830_21:14:08.943 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190830_21:14:29.912 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:hfarm
+(MainThread) 190830_21:14:31.304 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190830_21:14:31.688 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:hfarm
+(MainThread) 190830_21:14:31.908 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
