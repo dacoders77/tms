@@ -14,13 +14,13 @@ def square(number):
 
 def fare():
     for i in range(10):
-        print(i)
+        print(f"fare:{i}")
         time.sleep(1.2)
 
 
 def bare():
     for i in range(10):
-        print(f"xx: {i}")
+        print(f"bare: {i}")
         time.sleep(2)
 
 

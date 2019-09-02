@@ -1,17 +1,16 @@
 import sys
 sys.path.insert(1, 'samples/Python/Testbed') # Path to testbed
-
-import argparse
 import datetime
 import collections
-import inspect
-
 import logging
 import time
 import os.path
 
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
+
+import threading
+from ib.models import Signal
 
 # types
 # from ibapi.common import * # @UnusedWildImport
@@ -29,6 +28,8 @@ from ibapi.contract import * # @UnusedWildImport
 #
 from ContractSamples import ContractSamples # Works good
 from OrderSamples import OrderSamples # Works good
+
+import json
 
 
 def SetupLogger():
@@ -57,7 +58,6 @@ class TestApp(EWrapper, EClient):
     def __init__(self):
         EWrapper.__init__(self)
         EClient.__init__(self, wrapper=self)
-        # ! [socket_init]
         self.nKeybInt = 0
         self.started = False
         self.nextValidOrderId = None
@@ -66,12 +66,13 @@ class TestApp(EWrapper, EClient):
         self.globalCancelOnly = False
         self.simplePlaceOid = None
 
+
     # Get the next order ID. Called automatically on startup
     def nextValidId(self, orderId: int):
         super().nextValidId(orderId)
         logging.debug("setting nextValidOrderId: %d", orderId)
         self.nextValidOrderId = orderId
-        print("NextValidId:", orderId)
+        print("NextValidId(from override):", orderId)
         # Run the Function. It can be any
         self.orderOperations_req()
 
@@ -90,9 +91,8 @@ class TestApp(EWrapper, EClient):
         self.started = True
 
         # The parameter is always ignored.
-        self.reqIds(-1)
-        self.placeOrder(self.nextOrderId(), ContractSamples.EurGbpFx(),
-                        OrderSamples.MarketOrder("SELL", 20000))
+        #self.reqIds(-1)
+        #self.placeOrder(self.nextOrderId(), ContractSamples.EurGbpFx(), OrderSamples.MarketOrder("SELL", 20000))
 
     # Called on reqContractDetails
     def contractDetails(self, reqId, contractDetails):
@@ -104,10 +104,8 @@ class TestApp(EWrapper, EClient):
         logging.getLogger().setLevel(logging.ERROR)  # logging.INFO
 
         try:
-            app = TestApp()
-            # ! [connect]
+            app = TestApp() # app instance created again! The first one is created in co.py!
             app.connect("127.0.0.1", 4002, 0)
-            # ! [connect]
             print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
 
             # Crete a contract
@@ -117,18 +115,55 @@ class TestApp(EWrapper, EClient):
             contract.exchange = "SMART"
             contract.currency = "USD"
             contract.primaryExchange = "NASDAQ"
-            # app.reqContractDetails(1, contract)  # id, contract
+            #app.reqContractDetails(1, contract)  # id, contract
 
+            # Watcher thread
+            thread = MyThread(1, app, self)
+            thread.start()
+
+            # Run IB app
             app.run()
 
         except:
             raise
 
-# Delete
-class Trading:
-    def __init__(self):
-        self.a =1
 
-    def paint(self):
-        print('print from Trading.py')
-        return('Paint method')
+# Thread class. Use: import threading. Inherit from threading.Thread
+class MyThread(threading.Thread):
+    # Constructor. We pass app class instance as an argument
+    # this - context of the TestApp clas
+    def __init__(self, number, app, this):
+        super(MyThread, self).__init__()
+        self.number = number
+        self.app = app
+        self.this = this
+
+    # Ovveride run method. Now we can pass class instances as the parameters
+    # def run(self):
+    #     for i in range(100):
+    #         print(f"fare: {i} self num: {self.number} app: {self.app}")
+    #         time.sleep(self.number)
+    #         if i == 5:
+    #             print('----------------------REQUEST!')
+    #             self.app.reqContractDetails(1, self.contract)  # id, contract
+
+    def run(self):
+        i = 1
+        while i == 1:
+            records = Signal.objects.all()
+            for record in records:
+                if record.status == "new":
+                    print(f"new record id: {record.id}")
+                    rec = json.loads(record.request_payload)
+                    self.app.nextOrderId()
+                    contract = ContractSamples.USStock()
+                    contract.symbol = rec['symbol']
+                    self.app.placeOrder(self.app.nextOrderId(), contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
+
+                    print("url:" + rec['url'])
+
+                    record.status = "processed"
+                    record.save()
+                    time.sleep(1)
+
+

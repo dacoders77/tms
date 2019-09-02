@@ -42,12 +42,12 @@ def main():
     contract.exchange = "SMART"
     contract.currency = "USD"
     contract.primaryExchange = "NASDAQ"
-    app.reqContractDetails(1, contract)  # id, contract
+    #app.reqContractDetails(1, contract)  # id, contract
 
-    app.run() # IB app run
+    #app.run() # IB app run
 
 if __name__ == "__main__":
-    process = Process(target=fare) # First parallel process
+    process = Process(target=fare) # First parallel process. Function call
     process.start()
     #main() # IB app run. Works good
     process = Process(target=main) # Second parallel process

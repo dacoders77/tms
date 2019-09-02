@@ -107,9 +107,7 @@ def main():
 
     try:
         app = TestApp()
-        # ! [connect]
         app.connect("127.0.0.1", 4002, 0)
-        # ! [connect]
         print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
 
         # Crete a contract

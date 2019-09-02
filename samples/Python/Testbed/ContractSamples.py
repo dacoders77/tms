@@ -132,7 +132,7 @@ class ContractSamples:
     def USStock():
         #! [stkcontract]
         contract = Contract()
-        contract.symbol = "AAPL"
+        contract.symbol = "aapl"
         contract.secType = "STK"
         contract.currency = "USD"
         #In the API side, NASDAQ is always defined as ISLAND in the exchange field

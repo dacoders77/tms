@@ -1,0 +1,18 @@
+(MainThread) 190901_22:51:09.179 DEBUG Trading.py:110 now is 2019-09-01 22:51:09.179337
+(MainThread) 190901_22:51:09.211 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:hfarm
+(MainThread) 190901_22:51:09.212 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190901_22:51:09.212 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190901_22:51:09.213 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:jfarm
+(MainThread) 190901_22:51:09.213 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfuture
+(MainThread) 190901_22:51:09.213 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190901_22:51:09.214 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190901_22:51:09.214 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190901_22:51:09.215 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190901_22:51:09.215 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190901_22:51:09.215 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190901_22:51:29.670 ERROR wrapper.py:56 ERROR 504 399 Order Message:
+BUY 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:51:29.727 ERROR wrapper.py:56 ERROR 504 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [986750.81 USD] is insufficient to cover the Initial Margin requirement of [2045032.16 USD]
+
+(MainThread) 190901_22:52:17.622 ERROR wrapper.py:56 ERROR 504 103 Duplicate order id

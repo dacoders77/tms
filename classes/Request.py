@@ -6,17 +6,19 @@ from random import randrange
 class Request(BaseCommand):
 
     @staticmethod
-    def store():
+    def store(payload):
         record = Signal(
-            date=time.strftime('%Y-%m-%d %H:%M:%S'),
-            url="test_url",
-            symbol="aapl",
-            volume=150,
-            direction="long",
-            order_place_date=time.strftime('%Y-%m-%d %H:%M:%S'),
-            order_status="test",
-            order_type="market",
-            order_id=randrange(100000)
+            status="new",
+            request_payload=payload
+            # date=time.strftime('%Y-%m-%d %H:%M:%S'),
+            # url="test_url",
+            # symbol="aapl",
+            # volume=150,
+            # direction="long",
+            # order_place_date=time.strftime('%Y-%m-%d %H:%M:%S'),
+            # order_status="test",
+            # order_type="market",
+            # order_id=randrange(100000)
         )
         record.save()
 

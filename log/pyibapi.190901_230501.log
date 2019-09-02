@@ -1,0 +1,20 @@
+(MainThread) 190901_23:05:01.863 DEBUG Trading.py:103 now is 2019-09-01 23:05:01.863310
+(MainThread) 190901_23:05:01.867 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:hfarm
+(MainThread) 190901_23:05:01.867 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190901_23:05:01.868 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190901_23:05:01.868 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:jfarm
+(MainThread) 190901_23:05:01.868 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfuture
+(MainThread) 190901_23:05:01.869 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190901_23:05:01.870 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190901_23:05:01.871 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190901_23:05:01.871 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190901_23:05:01.871 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190901_23:05:01.872 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190901_23:05:04.572 ERROR wrapper.py:56 ERROR 532 399 Order Message:
+SELL 88 TOO NYSE
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_23:05:04.584 ERROR wrapper.py:56 ERROR 532 201 Order rejected - reason:YOUR ORDER IS NOT ACCEPTED. IN ORDER TO OBTAIN THE DESIRED POSITION YOUR EQUITY WITH LOAN VALUE [1009661.49 USD] MUST EXCEED THE INITIAL MARGIN [1004753.41 USD] PLUS VALUATION UNCERTAINTY [24126.26 USD]
+(MainThread) 190901_23:05:25.135 ERROR wrapper.py:56 ERROR 534 399 Order Message:
+BUY 89 TOO NYSE
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_23:05:25.144 ERROR wrapper.py:56 ERROR 534 201 Order rejected - reason:YOUR ORDER IS NOT ACCEPTED. IN ORDER TO OBTAIN THE DESIRED POSITION YOUR EQUITY WITH LOAN VALUE [1009657.12 USD] MUST EXCEED THE INITIAL MARGIN [1004559.83 USD] PLUS VALUATION UNCERTAINTY [24124.80 USD]

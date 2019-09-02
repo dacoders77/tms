@@ -1,0 +1,47 @@
+(MainThread) 190901_22:53:28.973 DEBUG Trading.py:110 now is 2019-09-01 22:53:28.973289
+(MainThread) 190901_22:53:28.977 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:hfarm
+(MainThread) 190901_22:53:28.978 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190901_22:53:28.978 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190901_22:53:28.980 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:jfarm
+(MainThread) 190901_22:53:28.980 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfuture
+(MainThread) 190901_22:53:28.980 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190901_22:53:28.982 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190901_22:53:28.982 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190901_22:53:28.983 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190901_22:53:28.983 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190901_22:53:28.983 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190901_22:53:39.724 ERROR wrapper.py:56 ERROR 506 399 Order Message:
+SELL 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:53:39.770 ERROR wrapper.py:56 ERROR 506 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [955977.00 USD] is insufficient to cover the Initial Margin requirement of [2253133.69 USD]
+
+(MainThread) 190901_22:53:47.869 ERROR wrapper.py:56 ERROR 508 399 Order Message:
+SELL 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:53:47.918 ERROR wrapper.py:56 ERROR 508 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [955977.00 USD] is insufficient to cover the Initial Margin requirement of [2253133.69 USD]
+
+(MainThread) 190901_22:54:09.658 ERROR wrapper.py:56 ERROR 510 399 Order Message:
+SELL 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:54:09.665 ERROR wrapper.py:56 ERROR 510 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [955606.64 USD] is insufficient to cover the Initial Margin requirement of [2253133.69 USD]
+
+(MainThread) 190901_22:55:17.303 ERROR wrapper.py:56 ERROR 512 399 Order Message:
+BUY 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:55:17.316 ERROR wrapper.py:56 ERROR 512 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [986060.39 USD] is insufficient to cover the Initial Margin requirement of [2045033.36 USD]
+
+(MainThread) 190901_22:55:32.367 ERROR wrapper.py:56 ERROR 514 399 Order Message:
+SELL 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:55:32.414 ERROR wrapper.py:56 ERROR 514 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [951597.50 USD] is insufficient to cover the Initial Margin requirement of [2253133.21 USD]
+
+(MainThread) 190901_22:56:10.469 ERROR wrapper.py:56 ERROR 516 399 Order Message:
+BUY 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:56:10.476 ERROR wrapper.py:56 ERROR 516 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [986054.91 USD] is insufficient to cover the Initial Margin requirement of [2045033.64 USD]
+
+(MainThread) 190901_22:56:23.114 ERROR wrapper.py:56 ERROR 518 399 Order Message:
+SELL 20,000 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190901_22:56:23.140 ERROR wrapper.py:56 ERROR 518 201 Order rejected - reason:Your order is not accepted because your Equity with Loan Value of [950230.21 USD] is insufficient to cover the Initial Margin requirement of [2253133.65 USD]
+

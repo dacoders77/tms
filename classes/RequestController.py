@@ -4,30 +4,45 @@
 
 from django.http import HttpResponse
 from classes.Request import Request
-
+import json
 
 class PlaceOrder:
     @staticmethod
     def botstatus(request):
-        Request.store()
-        return HttpResponse("RequestController.py bot status ")
+        requestPayload = json.dumps({
+            "url": "botstatus"
+        })
+        Request.store(requestPayload)
+        return HttpResponse(requestPayload)
 
     @staticmethod
     def placeorder(request, order_type, symbol, volume, direction):
-        return HttpResponse("hello from RequestController.py place_order:<br>"
-                            + order_type + "<br>"
-                            + symbol + "<br>"
-                            + volume + "<br>"
-                            + direction
-                            )
+        requestPayload = json.dumps({
+            "url": "placeorder",
+            "order_type": order_type,
+            "symbol": symbol,
+            "volume": volume,
+            "direction": direction,
+            "status": "new"
+        })
+        Request.store(requestPayload)
+        return HttpResponse(requestPayload)
 
     @staticmethod
     def getquote(request, symbol):
-        return HttpResponse("RequestController.py get quote: " + symbol)
+        requestPayload = json.dumps({
+            "url": "getquote"
+        })
+        Request.store(requestPayload)
+        return HttpResponse(requestPayload)
 
     @staticmethod
     def cancelallorders(request):
-        return HttpResponse("RequestController.py cancel all orders")
+        requestPayload = json.dumps({
+            "url": "cancelallorders"
+        })
+        Request.store(requestPayload)
+        return HttpResponse(requestPayload)
 
     def __delete__(self):
         return HttpResponse("")
