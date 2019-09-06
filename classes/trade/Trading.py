@@ -185,6 +185,7 @@ class MyThread(threading.Thread):
 
                     #contract = ContractSamples.EurGbpFx()
                     contract = ContractSamples.USStock()
+                    contract.symbol = rec['symbol']
                     self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
 
                     #print("next trading.py:" + str(self.app.nextValidOrderId))
