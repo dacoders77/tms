@@ -92,7 +92,11 @@ DATABASES = {
         # password
         'PASSWORD': '659111',
         # connect options
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'connect_timeout': 99999999,
+            #'net_read_timeout': 9999999
+        },
     }
 }
 

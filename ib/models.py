@@ -2,21 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-# date
-# url
-# symbol
-# volume
-# direction
-#
-# order_place_date
-# order_status
-# order_type
-# order_id
-# order_place_response
-# order_execution_response
-# order_execution_price
-
-
 class Signal(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -36,6 +21,11 @@ class Signal(models.Model):
     order_execution_response = models.TextField(null=True, blank=True)
     order_execution_price = models.IntegerField(null=True, blank=True)
 
-    # Pretty name output in console
+    # Pretty name output in console and in admin panel on the website
     def __str__(self):
-        return self.url + ' - ' + self.symbol
+        #return self.url + ' - ' + self.symbol
+        #return(f"{self.id}  {self.created_at} {self.updated_at} {self.status}")
+        return(str(self.id))
+
+
+

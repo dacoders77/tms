@@ -1,0 +1,9 @@
+(MainThread) 190902_18:35:22.065 DEBUG Trading.py:116 now is 2019-09-02 18:35:22.065295
+(MainThread) 190902_18:35:22.070 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190902_18:35:22.071 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190902_18:35:22.071 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190902_18:35:22.071 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190902_18:35:22.071 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_18:35:22.072 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190902_18:35:22.074 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190902_18:35:22.074 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds

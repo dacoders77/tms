@@ -13,19 +13,20 @@ import threading
 from ib.models import Signal
 
 # types
-# from ibapi.common import * # @UnusedWildImport
-# from ibapi.order_condition import * # @UnusedWildImport
-from ibapi.contract import * # @UnusedWildImport
-# from ibapi.order import * # @UnusedWildImport
-# from ibapi.order_state import * # @UnusedWildImport
+from ibapi.common import *
+#from ibapi.order_condition import *
+from ibapi.contract import *
+from ibapi.order import *
+from ibapi.order_state import *
 # from ibapi.execution import Execution
 # from ibapi.execution import ExecutionFilter
 # from ibapi.commission_report import CommissionReport
-# from ibapi.ticktype import * # @UnusedWildImport
+# from ibapi.ticktype import *
 # from ibapi.tag_value import TagValue
 #
 # from ibapi.account_summary_tags import *
-#
+
+
 from ContractSamples import ContractSamples # Works good
 from OrderSamples import OrderSamples # Works good
 
@@ -94,6 +95,35 @@ class TestApp(EWrapper, EClient):
         #self.reqIds(-1)
         #self.placeOrder(self.nextOrderId(), ContractSamples.EurGbpFx(), OrderSamples.MarketOrder("SELL", 20000))
 
+    # Called on placeOrder
+    # https://interactivebrokers.github.io/tws-api/order_submission.html
+    # def openOrder(self, orderId: OrderId, contract: Contract, order: Order, orderState: OrderState):
+    #
+    #     #super().openOrder(orderId, contract, order, orderState)
+    #
+    #     print("OpenOrder(Trading.py). PermId: ", order.permId, "ClientId:", order.clientId, " OrderId:", orderId,
+    #           "Account:", order.account, "Symbol:", contract.symbol, "SecType:", contract.secType,
+    #           "Exchange:", contract.exchange, "Action:", order.action, "OrderType:", order.orderType,
+    #           "TotalQty:", order.totalQuantity, "CashQty:", order.cashQty,
+    #           "LmtPrice:", order.lmtPrice, "AuxPrice:", order.auxPrice, "Status:", orderState.status)
+
+    # Called on placeOrder. Works good
+    def orderStatus(self, orderId: OrderId, status: str, filled: float,
+                    remaining: float, avgFillPrice: float, permId: int,
+                    parentId: int, lastFillPrice: float, clientId: int,
+                    whyHeld: str, mktCapPrice: float):
+        super().orderStatus(orderId, status, filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice)
+        response =  "OrderStatus. Id:", orderId, "Status:", status, "Filled:", filled, "Remaining:", \
+                    remaining, "AvgFillPrice:", avgFillPrice, "PermId:", permId, "ParentId:", parentId,\
+                    "LastFillPrice:", lastFillPrice, "ClientId:", clientId, "WhyHeld:", whyHeld, \
+                    "MktCapPrice:", mktCapPrice
+        print("From order status(Trading.py)" + str(response))
+        # Update response field
+        record = Signal.objects.get(req_id=self.nextValidOrderId)
+        record.response_payload = response
+        record.save()
+
+
     # Called on reqContractDetails
     def contractDetails(self, reqId, contractDetails):
         print("Contract details jojo:", reqId, " ", contractDetails)
@@ -105,7 +135,7 @@ class TestApp(EWrapper, EClient):
 
         try:
             app = TestApp() # app instance created again! The first one is created in co.py!
-            app.connect("127.0.0.1", 4002, 0)
+            app.connect("127.0.0.1", 4002, 0) # 4002 7496
             print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
 
             # Crete a contract
@@ -138,15 +168,6 @@ class MyThread(threading.Thread):
         self.app = app
         self.this = this
 
-    # Ovveride run method. Now we can pass class instances as the parameters
-    # def run(self):
-    #     for i in range(100):
-    #         print(f"fare: {i} self num: {self.number} app: {self.app}")
-    #         time.sleep(self.number)
-    #         if i == 5:
-    #             print('----------------------REQUEST!')
-    #             self.app.reqContractDetails(1, self.contract)  # id, contract
-
     def run(self):
         i = 1
         while i == 1:
@@ -154,15 +175,25 @@ class MyThread(threading.Thread):
             for record in records:
                 if record.status == "new":
                     print(f"new record id: {record.id}")
-                    rec = json.loads(record.request_payload)
+                    rec = json.loads(record.request_payload) # Parse json
                     self.app.nextOrderId()
-                    contract = ContractSamples.USStock()
-                    contract.symbol = rec['symbol']
-                    self.app.placeOrder(self.app.nextOrderId(), contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
 
-                    print("url:" + rec['url'])
+                    # STK
+                    #contract = ContractSamples.USStock()
+                    #contract.symbol = rec['symbol']
+                    #self.app.placeOrder(self.app.nextOrderId(), contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
+
+                    #contract = ContractSamples.EurGbpFx()
+                    contract = ContractSamples.USStock()
+                    self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
+
+                    #print("next trading.py:" + str(self.app.nextValidOrderId))
+
+                    print("Request payload(Trading.py):" + str(rec))
 
                     record.status = "processed"
+                    record.url = rec['url']
+                    record.req_id = self.app.nextValidOrderId
                     record.save()
                     time.sleep(1)
 

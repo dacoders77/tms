@@ -328,8 +328,7 @@ class TestApp(TestWrapper, TestClient):
 
     @iswrapper
     # ! [openorder]
-    def openOrder(self, orderId: OrderId, contract: Contract, order: Order,
-                  orderState: OrderState):
+    def openOrder(self, orderId: OrderId, contract: Contract, order: Order, orderState: OrderState):
         super().openOrder(orderId, contract, order, orderState)
         print("OpenOrder. PermId: ", order.permId, "ClientId:", order.clientId, " OrderId:", orderId, 
               "Account:", order.account, "Symbol:", contract.symbol, "SecType:", contract.secType,

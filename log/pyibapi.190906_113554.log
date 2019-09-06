@@ -1,0 +1,6 @@
+(MainThread) 190906_11:35:54.719 DEBUG Trading.py:133 now is 2019-09-06 11:35:54.719728
+(MainThread) 190906_11:36:01.416 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190906_11:36:01.419 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190906_11:36:01.420 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190906_11:36:01.420 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190906_11:36:13.259 ERROR wrapper.py:56 ERROR 2 321 Error validating request:-'bK' : cause - The API interface is currently in Read-Only mode.

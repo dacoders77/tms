@@ -1,0 +1,18 @@
+(MainThread) 190902_19:09:58.162 DEBUG Trading.py:134 now is 2019-09-02 19:09:58.162253
+(MainThread) 190902_19:09:58.168 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190902_19:09:58.168 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190902_19:09:58.168 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190902_19:09:58.169 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190902_19:09:58.169 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_19:09:58.170 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190902_19:09:58.172 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190902_19:09:58.173 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(Thread-1) 190902_19:10:11.531 ERROR reader.py:52 unhandled exception in EReader thread
+Traceback (most recent call last):
+  File "d:\py\tms\ibapi\reader.py", line 34, in run
+    data = self.conn.recvMsg()
+  File "d:\py\tms\ibapi\connection.py", line 99, in recvMsg
+    buf = self._recvAllMsg()
+  File "d:\py\tms\ibapi\connection.py", line 119, in _recvAllMsg
+    buf = self.socket.recv(4096)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket

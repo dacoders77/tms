@@ -1,0 +1,67 @@
+(MainThread) 190902_19:41:09.722 DEBUG Trading.py:133 now is 2019-09-02 19:41:09.722966
+(MainThread) 190902_19:41:09.727 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190902_19:41:09.727 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190902_19:41:09.727 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190902_19:41:09.728 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190902_19:41:09.729 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_19:41:09.730 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190902_19:41:09.732 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190902_19:41:09.732 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190902_19:41:47.405 ERROR wrapper.py:56 ERROR 604 321 Error validating request:-'bK' : cause - Invalid side field was entered
+(MainThread) 190902_22:25:32.201 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.usfarm.nj
+(MainThread) 190902_22:25:32.204 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.cashfarm
+(MainThread) 190902_22:25:32.205 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.usfarm.nj
+(MainThread) 190902_22:25:32.206 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.cashfarm
+(MainThread) 190902_22:26:09.936 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.eufarm
+(MainThread) 190902_22:26:09.938 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.eufarm
+(MainThread) 190902_22:35:45.070 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_22:35:46.194 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_23:45:31.984 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:secdefil
+(MainThread) 190902_23:45:32.375 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:secdefil
+(MainThread) 190902_23:55:13.524 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:55:14.242 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:55:19.056 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:55:30.932 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:55:56.328 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:56:28.892 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:57:35.095 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:58:38.955 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_23:59:43.808 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190903_00:00:01.479 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:00:01.868 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190903_00:00:16.433 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:00:17.857 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190903_00:00:31.585 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:00:52.786 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:00:58.215 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:01:01.557 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190903_00:01:01.887 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190903_00:01:03.132 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190903_00:01:04.465 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190903_00:01:08.880 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:01:31.794 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190903_00:01:32.121 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190903_00:01:38.760 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:02:25.046 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190903_00:02:25.595 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190903_00:02:32.404 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190903_00:02:33.856 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190903_00:02:37.861 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190903_00:02:51.303 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190903_00:02:56.273 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190903_00:02:56.274 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190903_00:03:11.531 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190903_00:03:39.595 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190903_00:04:45.748 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190903_00:04:47.065 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190903_00:04:52.287 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190903_00:05:12.480 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190903_00:05:13.910 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190903_00:05:21.174 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190903_00:05:53.008 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190903_00:05:53.010 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190903_00:06:08.072 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190903_00:06:39.719 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190903_00:06:39.722 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190903_00:16:16.421 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190903_00:16:27.098 ERROR wrapper.py:56 ERROR -1 1100 Connectivity between Zacks Trade and ZacksTrade Pro has been lost.

@@ -1,0 +1,68 @@
+(MainThread) 190902_18:02:11.343 DEBUG Trading.py:103 now is 2019-09-02 18:02:11.343208
+(MainThread) 190902_18:02:11.348 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190902_18:02:11.348 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190902_18:02:11.349 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190902_18:02:11.352 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190902_18:02:11.353 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_18:02:11.353 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190902_18:02:11.354 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190902_18:02:11.354 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190902_18:06:31.078 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:usfarm
+(MainThread) 190902_18:06:31.740 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190902_18:06:32.172 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190902_18:06:32.904 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_18:06:49.185 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:usfarm.nj
+(MainThread) 190902_18:06:55.607 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:eufarm
+(MainThread) 190902_18:07:11.270 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:cashfarm
+(MainThread) 190902_18:07:12.310 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:secdefil
+(MainThread) 190902_18:07:18.625 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:ushmds
+(MainThread) 190902_18:08:01.166 ERROR wrapper.py:56 ERROR -1 1100 Connectivity between Zacks Trade and ZacksTrade Pro has been lost.
+(MainThread) 190902_18:08:03.208 ERROR wrapper.py:56 ERROR -1 2108 Market data farm connection is inactive but should be available upon demand.usfarm.nj
+(MainThread) 190902_18:11:12.117 ERROR wrapper.py:56 ERROR -1 1100 Connectivity between Zacks Trade and ZacksTrade Pro has been lost.
+(MainThread) 190902_18:11:13.070 ERROR wrapper.py:56 ERROR -1 1102 Connectivity between Zacks Trade and ZacksTrade Pro has been restored - data maintained.
+(MainThread) 190902_18:11:13.685 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190902_18:11:13.704 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190902_18:11:13.751 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:ushmds
+(MainThread) 190902_18:11:13.834 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:secdefil
+(MainThread) 190902_18:11:13.957 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190902_18:11:14.008 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 55 TOO NYSE
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.011 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 55 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.014 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+BUY 66 IBKR IEX
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.017 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 87 AMZN NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.020 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 87 AMZN NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.023 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 87 AMZN NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.025 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+SELL 87 AMZN NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.027 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+BUY 150 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.031 ERROR wrapper.py:56 ERROR 0 399 Order Message:
+BUY 332 AAPL NASDAQ.NMS
+Warning: your order will not be placed at the exchange until 2019-09-03 09:30:00 US/Eastern
+(MainThread) 190902_18:11:14.055 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm
+(MainThread) 190902_18:11:14.325 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_18:11:14.481 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
+(MainThread) 190902_18:11:14.922 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:usfarm.nj
+(MainThread) 190902_18:11:44.356 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:fundfarm
+(MainThread) 190902_18:11:44.357 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:fundfarm
+(MainThread) 190902_18:11:44.502 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:cashfarm
+(MainThread) 190902_18:11:44.502 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:cashfarm
+(MainThread) 190902_18:11:44.582 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:cashhmds
+(MainThread) 190902_18:11:44.582 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:cashhmds
+(MainThread) 190902_18:11:45.786 ERROR wrapper.py:56 ERROR -1 2105 HMDS data farm connection is broken:euhmds
+(MainThread) 190902_18:11:45.787 ERROR wrapper.py:56 ERROR -1 2106 HMDS data farm connection is OK:euhmds
+(MainThread) 190902_18:11:46.351 ERROR wrapper.py:56 ERROR -1 2103 Market data farm connection is broken:eufarm
+(MainThread) 190902_18:11:46.352 ERROR wrapper.py:56 ERROR -1 2104 Market data farm connection is OK:eufarm
