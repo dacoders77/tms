@@ -135,7 +135,7 @@ class TestApp(EWrapper, EClient):
 
         try:
             app = TestApp() # app instance created again! The first one is created in co.py!
-            app.connect("127.0.0.1", 4002, 0) # 4002 7496
+            app.connect("127.0.0.1", 4003, 0) # 4002 7496. 4003 - linux
             print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
 
             # Crete a contract
