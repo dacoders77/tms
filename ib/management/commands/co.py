@@ -2,9 +2,7 @@ import django, time
 django.setup()
 from django.core.management.base import BaseCommand, CommandError
 from pprint import pprint
-
 from ib.models import Signal
-
 import sys
 sys.path.insert(1, 'classes/trade/') # Path to Trading app
 from Trading import TestApp

@@ -38,17 +38,14 @@ def SetupLogger():
         os.makedirs("log")
 
     time.strftime("pyibapi.%Y%m%d_%H%M%S.log")
-
     recfmt = '(%(threadName)s) %(asctime)s.%(msecs)03d %(levelname)s %(filename)s:%(lineno)d %(message)s'
-
     timefmt = '%y%m%d_%H:%M:%S'
 
     # logging.basicConfig( level=logging.DEBUG,
     #                    format=recfmt, datefmt=timefmt)
     logging.basicConfig(filename=time.strftime("log/pyibapi.%y%m%d_%H%M%S.log"),
                         filemode="w",
-                        #level=logging.INFO,
-                        level=logging.DEBUG,
+                        level=logging.DEBUG, # INFO
                         format=recfmt, datefmt=timefmt)
     logger = logging.getLogger()
     console = logging.StreamHandler()
@@ -129,12 +126,13 @@ class TestApp(EWrapper, EClient):
         print("Contract details jojo:", reqId, " ", contractDetails)
 
     def main(self):
+        # Logger settings
         SetupLogger()
         logging.debug("now is %s", datetime.datetime.now())
         logging.getLogger().setLevel(logging.ERROR)  # logging.INFO
 
         try:
-            app = TestApp() # app instance created again! The first one is created in co.py!
+            app = TestApp() # app instance created again! The first one is created in co.py! Fix this
             app.connect("127.0.0.1", 4003, 0) # 4002 7496. 4003 - linux
             print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
 
