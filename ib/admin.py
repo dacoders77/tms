@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Signal
+from .models import Signal, Log
 
 # Register your models here.
 
@@ -10,6 +10,10 @@ class SignalAdmin(admin.ModelAdmin):
       ordering = ('id',)
       search_fields = ('id', 'url')
 
+
+@admin.register(Log)
+class LogAdmin(admin.ModelAdmin):
+      list_display = ('id', 'message')
 
 
 

@@ -5,7 +5,7 @@ import collections
 import logging
 import time
 import os.path
-
+import json
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 
@@ -23,14 +23,13 @@ from ibapi.order_state import *
 # from ibapi.commission_report import CommissionReport
 # from ibapi.ticktype import *
 # from ibapi.tag_value import TagValue
-#
 # from ibapi.account_summary_tags import *
-
 
 from ContractSamples import ContractSamples # Works good
 from OrderSamples import OrderSamples # Works good
 
-import json
+sys.path.insert(1, 'classes/') # Path to DbLogger.py # Works good
+from DbLogger import DbLogger
 
 
 def SetupLogger():
@@ -41,16 +40,15 @@ def SetupLogger():
     recfmt = '(%(threadName)s) %(asctime)s.%(msecs)03d %(levelname)s %(filename)s:%(lineno)d %(message)s'
     timefmt = '%y%m%d_%H:%M:%S'
 
-    # logging.basicConfig( level=logging.DEBUG,
-    #                    format=recfmt, datefmt=timefmt)
-    logging.basicConfig(filename=time.strftime("log/pyibapi.%y%m%d_%H%M%S.log"),
-                        filemode="w",
-                        level=logging.DEBUG, # INFO
-                        format=recfmt, datefmt=timefmt)
-    logger = logging.getLogger()
-    console = logging.StreamHandler()
-    console.setLevel(logging.ERROR)
-    logger.addHandler(console)
+    # DB logger
+    # https://stackoverflow.com/questions/2314307/python-logging-to-database
+    logdb = DbLogger()
+    logging.basicConfig(level=logging.DEBUG, format=recfmt, datefmt=timefmt) # level=logging.INFO
+    logging.getLogger('').addHandler(logdb)
+    log = logging.getLogger('MY_LOGGER')
+    log.setLevel('DEBUG')
+    log.error('db check log')
+
 
 class TestApp(EWrapper, EClient):
     def __init__(self):
@@ -132,18 +130,10 @@ class TestApp(EWrapper, EClient):
         logging.getLogger().setLevel(logging.ERROR)  # logging.INFO
 
         try:
+            # Create IB instance and connect
             app = TestApp() # app instance created again! The first one is created in co.py! Fix this
             app.connect("127.0.0.1", 4003, 0) # 4002 7496. 4003 - linux
             print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
-
-            # Crete a contract
-            contract = Contract()
-            contract.symbol = "AAPL"
-            contract.secType = "STK"
-            contract.exchange = "SMART"
-            contract.currency = "USD"
-            contract.primaryExchange = "NASDAQ"
-            #app.reqContractDetails(1, contract)  # id, contract
 
             # Watcher thread
             thread = MyThread(1, app, self)
@@ -174,26 +164,32 @@ class MyThread(threading.Thread):
                 if record.status == "new":
                     print(f"new record id: {record.id}")
                     rec = json.loads(record.request_payload) # Parse json
-                    self.app.nextOrderId()
 
-                    # STK
-                    #contract = ContractSamples.USStock()
-                    #contract.symbol = rec['symbol']
-                    #self.app.placeOrder(self.app.nextOrderId(), contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
+                    if rec['url'] == 'placeorder':
+                        self.app.nextOrderId()
+                        # STK
+                        #contract = ContractSamples.USStock()
+                        #contract.symbol = rec['symbol']
+                        #self.app.placeOrder(self.app.nextOrderId(), contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
 
-                    #contract = ContractSamples.EurGbpFx()
-                    contract = ContractSamples.USStock()
-                    contract.symbol = rec['symbol']
-                    self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
+                        #contract = ContractSamples.EurGbpFx()
+                        contract = ContractSamples.USStock()
+                        contract.symbol = rec['symbol']
+                        self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
 
-                    #print("next trading.py:" + str(self.app.nextValidOrderId))
+                        #print("next trading.py:" + str(self.app.nextValidOrderId))
 
-                    print("Request payload(Trading.py):" + str(rec))
+                        print("Request payload(Trading.py):" + str(rec))
 
-                    record.status = "processed"
-                    record.url = rec['url']
-                    record.req_id = self.app.nextValidOrderId
-                    record.save()
-                    time.sleep(1)
+                        record.status = "processed"
+                        #record.url = rec['url']
+                        record.req_id = self.app.nextValidOrderId
+                        record.save()
+
+                    if rec['url'] == 'botstatus':
+                        record.status = "processed"
+                        #record.req_id = self.app.nextValidOrderId
+                        record.save()
 
 
+            time.sleep(1)

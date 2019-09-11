@@ -6,7 +6,7 @@ from ib.models import Signal
 import sys
 sys.path.insert(1, 'classes/trade/') # Path to Trading app
 from Trading import TestApp
-#from Trading import Trading
+
 
 from django.core import serializers
 import json
