@@ -3,7 +3,6 @@ from .models import Signal, Log
 
 # Register your models here.
 
-#admin.site.register(Signal)
 @admin.register(Signal)
 class SignalAdmin(admin.ModelAdmin):
       list_display = ('id', 'req_id', 'status', 'url', 'request_payload', 'response_payload')

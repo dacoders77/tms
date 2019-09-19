@@ -25,7 +25,7 @@ class Signal(models.Model):
     def __str__(self):
         #return self.url + ' - ' + self.symbol
         #return(f"{self.id}  {self.created_at} {self.updated_at} {self.status}")
-        return(str(self.id))
+        return f"{self.id} {self.created_at} {self.status} {self.req_id} {self.request_payload} {self.response_payload}"
 
 
 class Log(models.Model):

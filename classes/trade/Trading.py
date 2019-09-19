@@ -9,7 +9,9 @@ import json
 from ibapi.client import EClient
 from ibapi.wrapper import EWrapper
 
+# Thread
 import threading
+# Models
 from ib.models import Signal
 
 # types
@@ -18,21 +20,21 @@ from ibapi.common import *
 from ibapi.contract import *
 from ibapi.order import *
 from ibapi.order_state import *
-# from ibapi.execution import Execution
+from ibapi.execution import Execution
 # from ibapi.execution import ExecutionFilter
 # from ibapi.commission_report import CommissionReport
-# from ibapi.ticktype import *
+from ibapi.ticktype import *
 # from ibapi.tag_value import TagValue
 # from ibapi.account_summary_tags import *
 
-from ContractSamples import ContractSamples # Works good
-from OrderSamples import OrderSamples # Works good
+from ContractSamples import ContractSamples  # Works good
+from OrderSamples import OrderSamples  # Works good
 
-sys.path.insert(1, 'classes/') # Path to DbLogger.py # Works good
+sys.path.insert(1, 'classes/')  # Path to DbLogger.py # Works good
 from DbLogger import DbLogger
 
 
-def SetupLogger():
+def SetupLogger(self):
     if not os.path.exists("log"):
         os.makedirs("log")
 
@@ -45,9 +47,11 @@ def SetupLogger():
     logdb = DbLogger()
     logging.basicConfig(level=logging.DEBUG, format=recfmt, datefmt=timefmt) # level=logging.INFO
     logging.getLogger('').addHandler(logdb)
-    log = logging.getLogger('MY_LOGGER')
-    log.setLevel('DEBUG')
-    log.error('db check log')
+    # log = logging.getLogger('MY_LOGGER')  # Moved to constructor
+
+    self.log.setLevel('DEBUG')
+    # self.log.error('error text') # Db logger message sample
+    # logging.error('error text') # Default logger message sample
 
 
 class TestApp(EWrapper, EClient):
@@ -62,15 +66,21 @@ class TestApp(EWrapper, EClient):
         self.globalCancelOnly = False
         self.simplePlaceOid = None
 
+        self.timestamp = None  # Id for reqContractDetails
+        self.botStatusAwait = 0  # During this period the response must be received, otherwise - throw timeout
+
+        self.log = logging.getLogger('MY_LOGGER')  # DB Log
+
 
     # Get the next order ID. Called automatically on startup
     def nextValidId(self, orderId: int):
         super().nextValidId(orderId)
-        logging.debug("setting nextValidOrderId: %d", orderId)
+        # logging.debug("From nextValidID: ", datetime.datetime.now())
         self.nextValidOrderId = orderId
-        print("NextValidId(from override):", orderId)
-        # Run the Function. It can be any
-        self.orderOperations_req()
+
+        self.log.error('From nextValidID (connected successfully): ' + str(orderId))
+        print("From nextValidId:", orderId)
+
 
     # Increment nextValidOrderid
     def nextOrderId(self):
@@ -78,35 +88,10 @@ class TestApp(EWrapper, EClient):
         self.nextValidOrderId += 1
         return oid
 
-    def orderOperations_req(self):
-        # If not check - orders will be placed consistently
-        if self.started:
-            return
-
-        # Will need to set this flag to false somewhere in order to place a new order
-        self.started = True
-
-        # The parameter is always ignored.
-        #self.reqIds(-1)
-        #self.placeOrder(self.nextOrderId(), ContractSamples.EurGbpFx(), OrderSamples.MarketOrder("SELL", 20000))
 
     # Called on placeOrder
-    # https://interactivebrokers.github.io/tws-api/order_submission.html
-    # def openOrder(self, orderId: OrderId, contract: Contract, order: Order, orderState: OrderState):
-    #
-    #     #super().openOrder(orderId, contract, order, orderState)
-    #
-    #     print("OpenOrder(Trading.py). PermId: ", order.permId, "ClientId:", order.clientId, " OrderId:", orderId,
-    #           "Account:", order.account, "Symbol:", contract.symbol, "SecType:", contract.secType,
-    #           "Exchange:", contract.exchange, "Action:", order.action, "OrderType:", order.orderType,
-    #           "TotalQty:", order.totalQuantity, "CashQty:", order.cashQty,
-    #           "LmtPrice:", order.lmtPrice, "AuxPrice:", order.auxPrice, "Status:", orderState.status)
-
-    # Called on placeOrder. Works good
-    def orderStatus(self, orderId: OrderId, status: str, filled: float,
-                    remaining: float, avgFillPrice: float, permId: int,
-                    parentId: int, lastFillPrice: float, clientId: int,
-                    whyHeld: str, mktCapPrice: float):
+    def orderStatus(self, orderId: OrderId, status: str, filled: float, remaining: float, avgFillPrice: float, permId: int,
+                    parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
         super().orderStatus(orderId, status, filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice)
         response =  "OrderStatus. Id:", orderId, "Status:", status, "Filled:", filled, "Remaining:", \
                     remaining, "AvgFillPrice:", avgFillPrice, "PermId:", permId, "ParentId:", parentId,\
@@ -116,24 +101,71 @@ class TestApp(EWrapper, EClient):
         # Update response field
         record = Signal.objects.get(req_id=self.nextValidOrderId)
         record.response_payload = response
+        record.status = 'processed'
         record.save()
 
-
     # Called on reqContractDetails
-    def contractDetails(self, reqId, contractDetails):
-        print("Contract details jojo:", reqId, " ", contractDetails)
+    def contractDetails(self, reqId,  contractDetails: ContractDetails):
+        print(f"Contract details reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
+        # Update request status
+        record = Signal.objects.get(req_id=self.timestamp)
+        record.response_payload = 'alive'  # contractDetails.liquidHours
+        record.status = 'processed'
+        record.save()
+        self.printinstance(contractDetails)
+
+    # Called on reqCurrentTime
+    def currentTime(self, time:int):
+        super().currentTime(time)
+        currentTime = datetime.datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S")
+        print("from currentTime(). CurrentTime:", currentTime)
+
+    # Called on reqMktData
+    def tickPrice(self, reqId: TickerId, tickType: TickType, price: float, attrib: TickAttrib):
+        super().tickPrice(reqId, tickType, price, attrib)
+        # print("TickPrice(JKJB). TickerId:", reqId, "tickType:", tickType, "Price:", price, "CanAutoExecute:", attrib.canAutoExecute,
+        #      "PastLimit:", attrib.pastLimit, end=' ')
+        if tickType == TickTypeEnum.BID or tickType == TickTypeEnum.ASK:
+            print("PreOpen:", attrib.preOpen)
+        else:
+            print()
+
+        # Get tick #68 - delayed last trade price
+        # https://interactivebrokers.github.io/tws-api/tick_types.html
+
+        if (tickType == 68):
+            obj = Signal.objects.get(req_id=self.timestamp)
+            obj.response_payload = price
+            obj.save()
+
+
+
+    # Functions not related to IB
+
+    # Print contract details instance. Executed on reqContractDetails. Called from contractDetails
+    def printinstance(self, inst: Object):
+        attrs = vars(inst)
+        print(', '.join("%s: %s" % item for item in attrs.items()))
+
+    def timeStamp(self):
+        t = self.timestamp = int(time.time())
+        return t
 
     def main(self):
         # Logger settings
-        SetupLogger()
-        logging.debug("now is %s", datetime.datetime.now())
+        SetupLogger(self)
+        logging.debug("From def main. now is %s", datetime.datetime.now())
         logging.getLogger().setLevel(logging.ERROR)  # logging.INFO
 
         try:
             # Create IB instance and connect
             app = TestApp() # app instance created again! The first one is created in co.py! Fix this
-            app.connect("127.0.0.1", 4003, 0) # 4002 7496. 4003 - linux
-            print("serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
+            app.connect("127.0.0.55", 4003, 0)  # 4002 7496. 4003 - linux
+            print("After connection attempt: serverVersion:%s connectionTime:%s" % (app.serverVersion(), app.twsConnectionTime()))
+            app.reqCurrentTime()
+
+            # Switch to live (1) frozen (2) delayed (3) delayed frozen (4).
+            app.reqMarketDataType(MarketDataTypeEnum.DELAYED)
 
             # Watcher thread
             thread = MyThread(1, app, self)
@@ -162,34 +194,58 @@ class MyThread(threading.Thread):
             records = Signal.objects.all()
             for record in records:
                 if record.status == "new":
-                    print(f"new record id: {record.id}")
+                    print(f"Watch loop: new record id: {record.id}")
                     rec = json.loads(record.request_payload) # Parse json
 
                     if rec['url'] == 'placeorder':
                         self.app.nextOrderId()
-                        # STK
-                        #contract = ContractSamples.USStock()
-                        #contract.symbol = rec['symbol']
-                        #self.app.placeOrder(self.app.nextOrderId(), contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
-
-                        #contract = ContractSamples.EurGbpFx()
                         contract = ContractSamples.USStock()
                         contract.symbol = rec['symbol']
                         self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
-
-                        #print("next trading.py:" + str(self.app.nextValidOrderId))
-
                         print("Request payload(Trading.py):" + str(rec))
-
-                        record.status = "processed"
-                        #record.url = rec['url']
+                        record.status = "pending"
                         record.req_id = self.app.nextValidOrderId
                         record.save()
 
-                    if rec['url'] == 'botstatus':
-                        record.status = "processed"
-                        #record.req_id = self.app.nextValidOrderId
+
+                    if rec['url'] == 'botstatus' and record.status != 'pending':
+                        self.app.timeStamp()
+                        print('Entered bot status:' + str(i) + ' ' + str(self.app.timestamp))
+                        contract = ContractSamples.USStock()
+                        contract.symbol = 'aapl'
+                        self.app.reqContractDetails(self.app.timestamp, contract)
+
+                        record.status = "pending"
+                        record.req_id = self.app.timestamp
                         record.save()
 
+
+                    if rec['url'] == 'getquote' and record.status != 'pending':
+                        self.app.timeStamp()
+                        print('Entered bot get quote:' + str(i) + ' ' + str(self.app.timestamp))
+                        contract = ContractSamples.USStock()
+                        contract.symbol = rec['symbol']
+                        # self.app.reqContractDetails(self.app.timestamp, contract)
+                        # Tick types
+                        self.app.reqMktData(self.app.timestamp, contract, "", False, False, [])
+
+                        record.status = "pending"
+                        record.req_id = self.app.timestamp
+                        record.save()
+
+                        # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Classes/ApiManager.cs
+                        # iBClient.ClientSocket.reqMktData(requestId, contract, "", true, false, null);
+
+                        # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Form1.cs
+                        # ibClient.TickPrice += IbClient_TickPrice; // reqMarketData. EWrapper Interface
+
+                    if rec['url'] == 'cancelall' and record.status != 'pending':
+                        self.app.timeStamp()
+                        print('Entered cancel all:' + str(i) + ' ' + str(self.app.timestamp))
+                        self.app.reqGlobalCancel()
+                        record.status = 'processed'
+                        record.req_id = self.app.timestamp
+                        record.response_payload = 'cancel all ok'
+                        record.save()
 
             time.sleep(1)

@@ -22,5 +22,5 @@ urlpatterns = [
     path('botstatus', PlaceOrder.botstatus),
     path('placeorder/<order_type>/<symbol>/<volume>/<direction>', PlaceOrder.placeorder),
     path('getquote/<symbol>', PlaceOrder.getquote),
-    path('cancelallorders', PlaceOrder.cancelallorders)
+    path('cancelall', PlaceOrder.cancelallorders)
 ]

@@ -1,6 +1,0 @@
-(MainThread) 190906_11:28:09.877 DEBUG Trading.py:133 now is 2019-09-06 11:28:09.877849
-(MainThread) 190906_11:28:12.881 ERROR wrapper.py:56 ERROR -1 502 Couldn't connect to TWS. Confirm that "Enable ActiveX and Socket EClients" 
-is enabled and connection port is the same as "Socket Port" on the 
-TWS "Edit->Global Configuration...->API->Settings" menu. Live Trading ports: 
-TWS: 7496; IB Gateway: 4001. Simulated Trading ports for new installations 
-of version 954.1 or newer:  TWS: 7497; IB Gateway: 4002

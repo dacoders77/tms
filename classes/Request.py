@@ -24,5 +24,7 @@ class Request(BaseCommand):
         )
         record.save()
 
+        return record
+
 
 
