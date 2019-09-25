@@ -110,20 +110,13 @@ class TestApp(EWrapper, EClient):
         print(f"Contract details reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
         # Update response field
         try:
-            record = Signal.objects.get(req_id=self.nextValidOrderId)
-            record.response_payload = response
+            record = Signal.objects.get(req_id=self.timestamp)
+            record.response_payload = 'alive'  # contractDetails.liquidHours
             record.status = 'processed'
             record.save()
         except:
             print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz2')
-        
 
-
-
-        record = Signal.objects.get(req_id=self.timestamp)
-        record.response_payload = 'alive'  # contractDetails.liquidHours
-        record.status = 'processed'
-        record.save()
         self.printinstance(contractDetails)
 
     # Called on reqCurrentTime
@@ -139,14 +132,21 @@ class TestApp(EWrapper, EClient):
         #      "PastLimit:", attrib.pastLimit, end=' ')
         if tickType == TickTypeEnum.BID or tickType == TickTypeEnum.ASK:
             print("PreOpen:", attrib.preOpen)
-        else:
-            print()
 
         # Get tick #68 - delayed last trade price. https://interactivebrokers.github.io/tws-api/tick_types.html
         if (tickType == 68):
-            obj = Signal.objects.get(req_id=self.timestamp)
-            obj.response_payload = price
-            obj.save()
+            try:
+                obj = Signal.objects.get(req_id=self.timestamp)
+                obj.response_payload = price
+                obj.status = 'processed'
+                obj.save()
+            except:
+                print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz3')
+
+        # CANCEL TICKS HERE?
+        # Seems like ticks are still coming
+        print('Trading.py def tickPrice TICKS ARE STILL COMMING! WEE NEED TO CANCEL SUBSCRIPTION')
+        TestApp.cancelMktData()
 
 
 
@@ -205,7 +205,7 @@ class MyThread(threading.Thread):
             for record in records:
                 if record.status == "new":
                     print(f"Watch loop: new record id: {record.id}")
-                    rec = json.loads(record.request_payload) # Parse json
+                    rec = json.loads(record.request_payload)  # Parse json
 
                     if rec['url'] == 'placeorder':
                         self.app.nextOrderId()
@@ -213,12 +213,12 @@ class MyThread(threading.Thread):
                         contract.symbol = rec['symbol']
                         self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
                         print("Request payload (Trading.py placeorder):" + str(rec))
-
-
-                        record.status = "pending"
-                        record.req_id = self.app.nextValidOrderId
-                        record.save()
-
+                        try:
+                            record.status = "pending"
+                            record.req_id = self.app.nextValidOrderId
+                            record.save()
+                        except:
+                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz4')
 
                     if rec['url'] == 'botstatus' and record.status != 'pending':
                         self.app.timeStamp()
@@ -226,11 +226,12 @@ class MyThread(threading.Thread):
                         contract = ContractSamples.USStock()
                         contract.symbol = 'aapl'
                         self.app.reqContractDetails(self.app.timestamp, contract)
-
-                        record.status = "pending"
-                        record.req_id = self.app.timestamp
-                        record.save()
-
+                        try:
+                            record.status = "pending"
+                            record.req_id = self.app.timestamp
+                            record.save()
+                        except:
+                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz5')
 
                     if rec['url'] == 'getquote' and record.status != 'pending':
                         self.app.timeStamp()
@@ -240,10 +241,12 @@ class MyThread(threading.Thread):
                         # self.app.reqContractDetails(self.app.timestamp, contract)
                         # Tick types
                         self.app.reqMktData(self.app.timestamp, contract, "", False, False, [])
-
-                        record.status = "pending"
-                        record.req_id = self.app.timestamp
-                        record.save()
+                        try:
+                            record.status = "pending"
+                            record.req_id = self.app.timestamp
+                            record.save()
+                        except:
+                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz6')
 
                         # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Classes/ApiManager.cs
                         # iBClient.ClientSocket.reqMktData(requestId, contract, "", true, false, null);
@@ -255,10 +258,13 @@ class MyThread(threading.Thread):
                         self.app.timeStamp()
                         print('Entered cancel all:' + str(i) + ' ' + str(self.app.timestamp))
                         self.app.reqGlobalCancel()
+                        try:
+                            record.status = 'processed'
+                            record.req_id = self.app.timestamp
+                            record.response_payload = 'cancel all ok'
+                            record.save()
+                        except:
+                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz7')
 
-                        record.status = 'processed'
-                        record.req_id = self.app.timestamp
-                        record.response_payload = 'cancel all ok'
-                        record.save()
 
             time.sleep(1)
