@@ -146,7 +146,7 @@ class TestApp(EWrapper, EClient):
         # CANCEL TICKS HERE?
         # Seems like ticks are still coming
         print('Trading.py def tickPrice TICKS ARE STILL COMMING! WEE NEED TO CANCEL SUBSCRIPTION')
-        TestApp.cancelMktData()
+        #TestApp.cancelMktData()
 
 
 
