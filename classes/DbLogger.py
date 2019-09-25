@@ -3,6 +3,7 @@ import time
 from ib.models import Log
 from pprint import pprint
 
+
 # Customized logging handler that puts logs to the database
 class DbLogger(logging.Handler):
 
@@ -17,8 +18,9 @@ class DbLogger(logging.Handler):
         r.level = record.lineno
         r.source = record.filename
         r.message = record.message
-        r.save()
+        try:
+            r.save()
+        except:
+            print('DbLogger.py update model exception catch. Code: 6677hh')
 
-        #pprint(vars(record))
-        #print("jopa: " + record.filename)
 

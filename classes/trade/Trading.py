@@ -71,7 +71,6 @@ class TestApp(EWrapper, EClient):
 
         self.log = logging.getLogger('MY_LOGGER')  # DB Log
 
-
     # Get the next order ID. Called automatically on startup
     def nextValidId(self, orderId: int):
         super().nextValidId(orderId)
@@ -81,13 +80,11 @@ class TestApp(EWrapper, EClient):
         self.log.error('From nextValidID (connected successfully): ' + str(orderId))
         print("From nextValidId:", orderId)
 
-
     # Increment nextValidOrderid
     def nextOrderId(self):
         oid = self.nextValidOrderId
         self.nextValidOrderId += 1
         return oid
-
 
     # Called on placeOrder
     def orderStatus(self, orderId: OrderId, status: str, filled: float, remaining: float, avgFillPrice: float, permId: int,
@@ -98,16 +95,31 @@ class TestApp(EWrapper, EClient):
                     "LastFillPrice:", lastFillPrice, "ClientId:", clientId, "WhyHeld:", whyHeld, \
                     "MktCapPrice:", mktCapPrice
         print("From order status(Trading.py)" + str(response))
+
         # Update response field
-        record = Signal.objects.get(req_id=self.nextValidOrderId)
-        record.response_payload = response
-        record.status = 'processed'
-        record.save()
+        try:
+            record = Signal.objects.get(req_id=self.nextValidOrderId)
+            record.response_payload = response
+            record.status = 'processed'
+            record.save()
+        except:
+            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz')
 
     # Called on reqContractDetails
     def contractDetails(self, reqId,  contractDetails: ContractDetails):
         print(f"Contract details reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
-        # Update request status
+        # Update response field
+        try:
+            record = Signal.objects.get(req_id=self.nextValidOrderId)
+            record.response_payload = response
+            record.status = 'processed'
+            record.save()
+        except:
+            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz2')
+        
+
+
+
         record = Signal.objects.get(req_id=self.timestamp)
         record.response_payload = 'alive'  # contractDetails.liquidHours
         record.status = 'processed'
@@ -130,9 +142,7 @@ class TestApp(EWrapper, EClient):
         else:
             print()
 
-        # Get tick #68 - delayed last trade price
-        # https://interactivebrokers.github.io/tws-api/tick_types.html
-
+        # Get tick #68 - delayed last trade price. https://interactivebrokers.github.io/tws-api/tick_types.html
         if (tickType == 68):
             obj = Signal.objects.get(req_id=self.timestamp)
             obj.response_payload = price
@@ -202,7 +212,9 @@ class MyThread(threading.Thread):
                         contract = ContractSamples.USStock()
                         contract.symbol = rec['symbol']
                         self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
-                        print("Request payload(Trading.py):" + str(rec))
+                        print("Request payload (Trading.py placeorder):" + str(rec))
+
+
                         record.status = "pending"
                         record.req_id = self.app.nextValidOrderId
                         record.save()
@@ -243,6 +255,7 @@ class MyThread(threading.Thread):
                         self.app.timeStamp()
                         print('Entered cancel all:' + str(i) + ' ' + str(self.app.timestamp))
                         self.app.reqGlobalCancel()
+
                         record.status = 'processed'
                         record.req_id = self.app.timestamp
                         record.response_payload = 'cancel all ok'
