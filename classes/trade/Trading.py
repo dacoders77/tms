@@ -30,7 +30,7 @@ from ibapi.ticktype import *
 from ContractSamples import ContractSamples  # Works good
 from OrderSamples import OrderSamples  # Works good
 
-sys.path.insert(1, 'classes/')  # Path to DbLogger.py # Works good
+sys.path.insert(1, 'classes/')  # Path to DbLogger.py
 from DbLogger import DbLogger
 
 
@@ -47,7 +47,6 @@ def SetupLogger(self):
     logdb = DbLogger()
     logging.basicConfig(level=logging.DEBUG, format=recfmt, datefmt=timefmt) # level=logging.INFO
     logging.getLogger('').addHandler(logdb)
-    # log = logging.getLogger('MY_LOGGER')  # Moved to constructor
 
     self.log.setLevel('DEBUG')
     # self.log.error('error text') # Db logger message sample
@@ -74,9 +73,7 @@ class TestApp(EWrapper, EClient):
     # Get the next order ID. Called automatically on startup
     def nextValidId(self, orderId: int):
         super().nextValidId(orderId)
-        # logging.debug("From nextValidID: ", datetime.datetime.now())
         self.nextValidOrderId = orderId
-
         self.log.error('From nextValidID (connected successfully): ' + str(orderId))
         print("From nextValidId:", orderId)
 
@@ -103,7 +100,9 @@ class TestApp(EWrapper, EClient):
             record.status = 'processed'
             record.save()
         except:
-            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz')
+            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz'
+            print(error)
+            self.log.error(error)
 
     # Called on reqContractDetails
     def contractDetails(self, reqId,  contractDetails: ContractDetails):
@@ -115,7 +114,10 @@ class TestApp(EWrapper, EClient):
             record.status = 'processed'
             record.save()
         except:
-            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz2')
+            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz2'
+            print(error)
+            self.log.error(error)
+
 
         self.printinstance(contractDetails)
 
@@ -141,7 +143,9 @@ class TestApp(EWrapper, EClient):
                 obj.status = 'processed'
                 obj.save()
             except:
-                print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz3')
+                error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz3'
+                print(error)
+                self.log.error(error)
 
         # CANCEL TICKS HERE?
         # Seems like ticks are still coming
@@ -191,7 +195,7 @@ class TestApp(EWrapper, EClient):
 # Thread class. Use: import threading. Inherit from threading.Thread
 class MyThread(threading.Thread):
     # Constructor. We pass app class instance as an argument
-    # this - context of the TestApp clas
+    # this - context of the TestApp class
     def __init__(self, number, app, this):
         super(MyThread, self).__init__()
         self.number = number
@@ -210,6 +214,7 @@ class MyThread(threading.Thread):
                     if rec['url'] == 'placeorder':
                         self.app.nextOrderId()
                         contract = ContractSamples.USStock()
+                        contract.exchange = rec['exchange']
                         contract.symbol = rec['symbol']
                         self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
                         print("Request payload (Trading.py placeorder):" + str(rec))
@@ -218,7 +223,9 @@ class MyThread(threading.Thread):
                             record.req_id = self.app.nextValidOrderId
                             record.save()
                         except:
-                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz4')
+                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz4'
+                            print(error)
+                            self.log.error(error)
 
                     if rec['url'] == 'botstatus' and record.status != 'pending':
                         self.app.timeStamp()
@@ -231,7 +238,9 @@ class MyThread(threading.Thread):
                             record.req_id = self.app.timestamp
                             record.save()
                         except:
-                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz5')
+                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz5'
+                            print(error)
+                            self.log.error(error)
 
                     if rec['url'] == 'getquote' and record.status != 'pending':
                         self.app.timeStamp()
@@ -246,7 +255,9 @@ class MyThread(threading.Thread):
                             record.req_id = self.app.timestamp
                             record.save()
                         except:
-                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz6')
+                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz6'
+                            print(error)
+                            self.log.error(error)
 
                         # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Classes/ApiManager.cs
                         # iBClient.ClientSocket.reqMktData(requestId, contract, "", true, false, null);
@@ -264,7 +275,8 @@ class MyThread(threading.Thread):
                             record.response_payload = 'cancel all ok'
                             record.save()
                         except:
-                            print('Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz7')
-
+                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz7'
+                            print(error)
+                            self.log.error(error)
 
             time.sleep(1)

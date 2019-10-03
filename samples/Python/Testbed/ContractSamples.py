@@ -136,7 +136,7 @@ class ContractSamples:
         contract.secType = "STK"
         contract.currency = "USD"
         #In the API side, NASDAQ is always defined as ISLAND in the exchange field
-        contract.exchange = "ISLAND"
+        #contract.exchange = "ISLAND"
         #! [stkcontract]
         return contract
 
