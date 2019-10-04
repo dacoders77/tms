@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('botstatus', PlaceOrder.botstatus),
     path('placeorder/<order_type>/<exchange>/<symbol>/<volume>/<direction>', PlaceOrder.placeorder),
-    path('getquote/<symbol>', PlaceOrder.getquote),
+    path('getquote/<exchange>/<symbol>', PlaceOrder.getquote),
     path('cancelall', PlaceOrder.cancelallorders)
 ]

@@ -149,7 +149,7 @@ class TestApp(EWrapper, EClient):
 
         # CANCEL TICKS HERE?
         # Seems like ticks are still coming
-        print('Trading.py def tickPrice TICKS ARE STILL COMMING! WEE NEED TO CANCEL SUBSCRIPTION')
+        print('Trading.py def tickPrice TICKS ARE STILL COMING! WE NEED TO CANCEL SUBSCRIPTION')
         #TestApp.cancelMktData()
 
 
@@ -231,6 +231,7 @@ class MyThread(threading.Thread):
                         self.app.timeStamp()
                         print('Entered bot status:' + str(i) + ' ' + str(self.app.timestamp))
                         contract = ContractSamples.USStock()
+                        contract.exchange = 'nyse'
                         contract.symbol = 'aapl'
                         self.app.reqContractDetails(self.app.timestamp, contract)
                         try:
@@ -246,6 +247,7 @@ class MyThread(threading.Thread):
                         self.app.timeStamp()
                         print('Entered bot get quote:' + str(i) + ' ' + str(self.app.timestamp))
                         contract = ContractSamples.USStock()
+                        contract.exchange = rec['exchange']
                         contract.symbol = rec['symbol']
                         # self.app.reqContractDetails(self.app.timestamp, contract)
                         # Tick types

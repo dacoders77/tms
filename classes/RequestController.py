@@ -84,13 +84,14 @@ class PlaceOrder:
                 datetime.datetime.now()))
 
     @staticmethod
-    def getquote(request, symbol):
+    def getquote(request, exchange, symbol):
 
         # If there are pending tasks active
         if PlaceOrder.isLock(request): return HttpResponse(PlaceOrder.errorMessage)
 
         requestPayload = json.dumps({
             "url": "getquote",
+            "exchange": exchange,
             "symbol": symbol,
             "status": "new"
         })
