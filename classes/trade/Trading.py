@@ -180,6 +180,7 @@ class TestApp(EWrapper, EClient):
 
             # Switch to live (1) frozen (2) delayed (3) delayed frozen (4).
             app.reqMarketDataType(MarketDataTypeEnum.DELAYED)
+            # app.reqMarketDataType(MarketDataTypeEnum.REALTIME)
 
             # Watcher thread
             thread = MyThread(1, app, self)
@@ -211,11 +212,14 @@ class MyThread(threading.Thread):
                     print(f"Watch loop: new record id: {record.id}")
                     rec = json.loads(record.request_payload)  # Parse json
 
+                    # Place an order. Multiple exchanges are supported. When use non US once - specify the currency!
+                    # http://127.0.0.1:8000/placeorder/market/lse/imm/gbp/20000/buy
                     if rec['url'] == 'placeorder':
                         self.app.nextOrderId()
                         contract = ContractSamples.USStock()
                         contract.exchange = rec['exchange']
                         contract.symbol = rec['symbol']
+                        contract.currency = rec['currency']
                         self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
                         print("Request payload (Trading.py placeorder):" + str(rec))
                         try:
@@ -227,6 +231,9 @@ class MyThread(threading.Thread):
                             print(error)
                             self.log.error(error)
 
+                    # Place an order. Multiple exchanges are supported. When use non US once - specify the currency!
+                    # http://127.0.0.1:8000/getquote/nyse/ibkr/usd
+                    #
                     if rec['url'] == 'botstatus' and record.status != 'pending':
                         self.app.timeStamp()
                         print('Entered bot status:' + str(i) + ' ' + str(self.app.timestamp))
@@ -249,6 +256,7 @@ class MyThread(threading.Thread):
                         contract = ContractSamples.USStock()
                         contract.exchange = rec['exchange']
                         contract.symbol = rec['symbol']
+                        contract.currency = rec['currency']
                         # self.app.reqContractDetails(self.app.timestamp, contract)
                         # Tick types
                         self.app.reqMktData(self.app.timestamp, contract, "", False, False, [])

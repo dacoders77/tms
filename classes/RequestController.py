@@ -51,7 +51,7 @@ class PlaceOrder:
 
 
     @staticmethod
-    def placeorder(request, order_type, exchange, symbol, volume, direction):
+    def placeorder(request, order_type, exchange, symbol, volume, direction, currency):
 
         # If there are pending tasks active
         if PlaceOrder.isLock(request): return HttpResponse(PlaceOrder.errorMessage)
@@ -61,6 +61,7 @@ class PlaceOrder:
             "order_type": order_type,
             "exchange": exchange,
             "symbol": symbol,
+            "currency": currency,
             "volume": volume,
             "direction": direction,
             "status": "new"
@@ -84,7 +85,7 @@ class PlaceOrder:
                 datetime.datetime.now()))
 
     @staticmethod
-    def getquote(request, exchange, symbol):
+    def getquote(request, exchange, symbol, currency):
 
         # If there are pending tasks active
         if PlaceOrder.isLock(request): return HttpResponse(PlaceOrder.errorMessage)
@@ -93,6 +94,7 @@ class PlaceOrder:
             "url": "getquote",
             "exchange": exchange,
             "symbol": symbol,
+            "currency": currency,
             "status": "new"
         })
 
