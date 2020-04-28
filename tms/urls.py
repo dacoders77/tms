@@ -20,6 +20,8 @@ from classes.RequestController import PlaceOrder  # Class reference
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('botstatus', PlaceOrder.botstatus),
+    ## add price as a parameter
+    ## path('placeorder/<order_type>/<exchange>/<symbol>/<currency>/<volume>/<direction>/<price>', PlaceOrder.placeorder),
     path('placeorder/<order_type>/<exchange>/<symbol>/<currency>/<volume>/<direction>', PlaceOrder.placeorder),
     path('getquote/<exchange>/<symbol>/<currency>', PlaceOrder.getquote),
     path('cancelall', PlaceOrder.cancelallorders)

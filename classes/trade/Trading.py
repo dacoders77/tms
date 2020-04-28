@@ -233,7 +233,7 @@ class MyThread(threading.Thread):
 
                     # Place an order. Multiple exchanges are supported. When use non US once - specify the currency!
                     # http://127.0.0.1:8000/getquote/nyse/ibkr/usd
-                    #
+                    # http://104.207.128.112:9596/getquote/lse/imm/gbp
                     if rec['url'] == 'botstatus' and record.status != 'pending':
                         self.app.timeStamp()
                         print('Entered bot status:' + str(i) + ' ' + str(self.app.timestamp))
