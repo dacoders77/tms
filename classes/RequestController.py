@@ -51,7 +51,7 @@ class PlaceOrder:
 
 
     @staticmethod
-    def placeorder(request, order_type, exchange, symbol, volume, direction, currency):
+    def placeorder(request, order_type, exchange, symbol, volume, direction, currency, price=""):
 
         # If there are pending tasks active
         if PlaceOrder.isLock(request): return HttpResponse(PlaceOrder.errorMessage)
@@ -63,6 +63,7 @@ class PlaceOrder:
             "symbol": symbol,
             "currency": currency,
             "volume": volume,
+            "price": price,
             "direction": direction,
             "status": "new"
         })
