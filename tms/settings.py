@@ -74,32 +74,42 @@ WSGI_APPLICATION = 'tms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         # MySQL database engine class.
+#         'ENGINE': 'django.db.backends.mysql',
+#         # Connection age
+#         # https://stackoverflow.com/questions/26958592/django-after-upgrade-mysql-server-has-gone-away
+#         'CONN_MAX_AGE': 3000,
+#         # MySQL database host ip.
+#         'HOST': '127.0.0.1',
+#         # port number.
+#         'PORT': '3306',
+#         # database name.
+#         'NAME': 'dj',
+#         # user name.
+#         'USER': 'slinger',
+#         # password
+#         'PASSWORD': '659111',
+#         # connect options
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'connect_timeout': 99999999,
+#             #'net_read_timeout': 9999999
+#         },
+#     }
+# }
+
 DATABASES = {
     'default': {
-        # MySQL database engine class.
-        'ENGINE': 'django.db.backends.mysql',
-        # Connection age
-        # https://stackoverflow.com/questions/26958592/django-after-upgrade-mysql-server-has-gone-away
-        'CONN_MAX_AGE': 3000,
-        # MySQL database host ip.
-        'HOST': '127.0.0.1',
-        # port number.
-        'PORT': '3306',
-        # database name.
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dj',
-        # user name.
         'USER': 'slinger',
-        # password
         'PASSWORD': '659111',
-        # connect options
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'connect_timeout': 99999999,
-            #'net_read_timeout': 9999999
-        },
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
