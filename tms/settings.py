@@ -25,7 +25,7 @@ SECRET_KEY = 'g7vagodklf=_ss7!-5#ug9-wfic8&7b*c_re1p(n%j05t@2*j1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,9 +88,9 @@ DATABASES = {
         # database name.
         'NAME': 'dj',
         # user name.
-        'USER': 'slinger',
+        'USER': 'boris',
         # password
-        'PASSWORD': '659111',
+        'PASSWORD': 'vt6yhg5',
         # connect options
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
