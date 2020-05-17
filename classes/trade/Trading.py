@@ -169,12 +169,13 @@ class TestApp(EWrapper, EClient):
             print('Ticker symbol is not present. Output all positions')
             positionVolume = "No position found for provided ticker"
 
+            # If no symbol specified - output the whole dictionary
+            payload = positionVolume if self.positionSymbol != "" else self.positionsDict
+            print('Position volume payload(trace): ' + str(payload))
+
         # Update response field
         try:
             record = Signal.objects.get(req_id=self.timestamp)
-            # If no symbol specified - output the whole dictionary
-            payload = positionVolume if self.positionSymbol != "" else self.positionsDict
-            print('Position volume payload(trace): ' + payload)
             record.response_payload = payload
             record.status = 'processed'
             record.save()
