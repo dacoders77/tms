@@ -173,6 +173,7 @@ class TestApp(EWrapper, EClient):
             payload = positionVolume if self.positionSymbol != "" else self.positionsDict
             print('Position volume payload(trace): ' + str(payload))
             print('Timestamp trace: ' + str(self.timestamp))
+            print('Signals table trace: ' + str(Signal.objects.values('id', 'req_id', 'status', 'url')))
             print('Get DB record trace: ' + str(Signal.objects.get(req_id=self.timestamp)))
 
         # Update response field
