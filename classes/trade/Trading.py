@@ -168,18 +168,18 @@ class TestApp(EWrapper, EClient):
         else:
             print('Ticker symbol is not present. Output all positions')
             positionVolume = "No position found for provided ticker"
-
             # If no symbol specified - output the whole dictionary
-            payload = positionVolume if self.positionSymbol != "" else self.positionsDict
-            print('Position volume payload(trace): ' + str(payload))
-            print('Timestamp trace: ' + str(self.timestamp))
-            print('Signals table trace: ' + str(Signal.objects.values('id', 'req_id', 'status', 'url')))
-            print('Get DB record trace: ' + str(Signal.objects.get(req_id=self.timestamp)))
+            positionVolume = positionVolume if self.positionSymbol != "" else self.positionsDict
+
+        print('Position volume payload(trace): ' + str(positionVolume))
+        print('Timestamp trace: ' + str(self.timestamp))
+        print('Signals table trace: ' + str(Signal.objects.values('id', 'req_id', 'status', 'url')))
+        print('Get DB record trace: ' + str(Signal.objects.get(req_id=self.timestamp)))
 
         # Update response field
         try:
             record = Signal.objects.get(req_id=self.timestamp)
-            record.response_payload = payload
+            record.response_payload = positionVolume
             record.status = 'processed'
             record.save()
         except:
@@ -330,8 +330,7 @@ class MyThread(threading.Thread):
                     # https://interactivebrokers.github.io/tws-api/classIBApi_1_1EClient.html#a4fa2744c3459f9f6cf695980267608c3
                     if rec['url'] == 'getpositions' and record.status != 'pending':
                         self.app.timeStamp()
-                        print('Entered bot getpositions:' + str(i) + ' ' + str(self.app.timestamp))
-                        self.app.reqPositionsMulti(self.app.timestamp, "", "")
+                        print('Entered bot getpositions:' + str(self.app.timestamp))
                         TestApp.positionSymbol = rec['symbol'].upper()
                         try:
                             record.status = "pending"
@@ -341,6 +340,8 @@ class MyThread(threading.Thread):
                             error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 26ooutt'
                             print(error)
                             self.log.error(error)
+
+                        self.app.reqPositionsMulti(self.app.timestamp, "", "")
 
                     if rec['url'] == 'getquote' and record.status != 'pending':
                         self.app.timeStamp()
