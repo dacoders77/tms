@@ -172,6 +172,7 @@ class TestApp(EWrapper, EClient):
             # If no symbol specified - output the whole dictionary
             payload = positionVolume if self.positionSymbol != "" else self.positionsDict
             print('Position volume payload(trace): ' + str(payload))
+            print('Timestamp trace: ' + str(self.timestamp))
             print('Get DB record trace: ' + str(Signal.objects.get(req_id=self.timestamp)))
 
         # Update response field
