@@ -127,7 +127,6 @@ class TestApp(EWrapper, EClient):
 
     # Called from reqPositions
     def position(self, reqId, account:str, contract:Contract, position:float):
-    #def position(self, reqId, account, contract:Contract, position):
 
         print(f"Positions reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
         # Update response field
@@ -164,21 +163,23 @@ class TestApp(EWrapper, EClient):
         print("PositionMultiEnd. Finished sending positions. RequestId:", reqId)
 
         if self.positionSymbol in self.positionsDict.keys():
-            print(self.positionsDict[self.positionSymbol])
+            print('Position volume: ' + str(self.positionsDict[self.positionSymbol]))
             positionVolume = self.positionsDict[self.positionSymbol]
         else:
-            print('Not present')
+            print('Ticker symbol is not present. Output all positions')
             positionVolume = "No position found for provided ticker"
 
         # Update response field
         try:
             record = Signal.objects.get(req_id=self.timestamp)
-            # If in symbol specified - output the whole dictionary
-            record.response_payload = positionVolume if self.positionSymbol != "" else self.positionsDict
+            # If no symbol specified - output the whole dictionary
+            payload = positionVolume if self.positionSymbol != "" else self.positionsDict
+            print('Position volume payload(trace): ' + payload)
+            record.response_payload = payload
             record.status = 'processed'
             record.save()
         except:
-            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99yjjj'
+            error = 'Trading.py. Update Model query error. Code: 99yjjj'
             print(error)
             self.log.error(error)
 
@@ -328,7 +329,6 @@ class MyThread(threading.Thread):
                         print('Entered bot getpositions:' + str(i) + ' ' + str(self.app.timestamp))
                         self.app.reqPositionsMulti(self.app.timestamp, "", "")
                         TestApp.positionSymbol = rec['symbol'].upper()
-
                         try:
                             record.status = "pending"
                             record.req_id = self.app.timestamp
