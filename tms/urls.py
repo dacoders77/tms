@@ -35,6 +35,7 @@ urlpatterns = [
     path('placeorder/<order_type>/<exchange>/<symbol>/<currency>/<volume>/<direction>', PlaceOrder.placeorder),
 
     # Get quote
+    # http://127.0.0.1:8000/getquote/nyse/aapl/usd
     path('getquote/<exchange>/<symbol>/<currency>', PlaceOrder.getquote),
 
     # Cancel all placed orders. Including market orders if they are placed during non trading hours
@@ -42,8 +43,10 @@ urlpatterns = [
     path('cancelall', PlaceOrder.cancelallorders),
 
     # Get positions
+    # http://127.0.0.1:8000/getpositions
     path('getpositions', PlaceOrder.getpositions),
 
     # Get positions for symbol
+    # http://127.0.0.1:8000/getpositions/ibkr
     path('getpositions/<symbol>', PlaceOrder.getpositions)
 ]

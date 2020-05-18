@@ -127,7 +127,6 @@ class TestApp(EWrapper, EClient):
 
     # Called from reqPositions
     def position(self, reqId, account:str, contract:Contract, position:float):
-
         print(f"Positions reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
         # Update response field
         try:
@@ -171,10 +170,10 @@ class TestApp(EWrapper, EClient):
             # If no symbol specified - output the whole dictionary
             positionVolume = positionVolume if self.positionSymbol != "" else self.positionsDict
 
-        print('Position volume payload(trace): ' + str(positionVolume))
-        print('Timestamp trace: ' + str(self.timestamp))
-        print('Signals table trace: ' + str(Signal.objects.values('id', 'req_id', 'status', 'url')))
-        print('Get DB record trace: ' + str(Signal.objects.get(req_id=self.timestamp)))
+        # print('Position volume payload(trace): ' + str(positionVolume))
+        # print('Timestamp trace: ' + str(self.timestamp))
+        # print('Signals table trace: ' + str(Signal.objects.values('id', 'req_id', 'status', 'url')))
+        # print('Get DB record trace: ' + str(Signal.objects.get(req_id=self.timestamp)))
 
         # Update response field
         try:
@@ -196,13 +195,13 @@ class TestApp(EWrapper, EClient):
     # Called on reqMktData
     def tickPrice(self, reqId: TickerId, tickType: TickType, price: float, attrib: TickAttrib):
         super().tickPrice(reqId, tickType, price, attrib)
-        # print("TickPrice(JKJB). TickerId:", reqId, "tickType:", tickType, "Price:", price, "CanAutoExecute:", attrib.canAutoExecute,
-        #      "PastLimit:", attrib.pastLimit, end=' ')
+        #print("TickPrice(JKJB). TickerId:", reqId, "tickType:", tickType, "Price:", price, "CanAutoExecute:", attrib.canAutoExecute, "PastLimit:", attrib.pastLimit, end=' ')
         if tickType == TickTypeEnum.BID or tickType == TickTypeEnum.ASK:
             print("PreOpen:", attrib.preOpen)
 
         # Get tick #68 - delayed last trade price. https://interactivebrokers.github.io/tws-api/tick_types.html
         if (tickType == 68):
+            TestApp.cancelMktData(self, reqId) # Cancel subscription when tick type 68 received
             try:
                 obj = Signal.objects.get(req_id=self.timestamp)
                 obj.response_payload = price
@@ -213,11 +212,7 @@ class TestApp(EWrapper, EClient):
                 print(error)
                 self.log.error(error)
 
-        # CANCEL TICKS HERE?
-        # Seems like ticks are still coming
-        print('Trading.py def tickPrice TICKS ARE STILL COMING! WE NEED TO CANCEL SUBSCRIPTION')
-        #TestApp.cancelMktData()
-
+        print('Trading.py def tickPrice. Tick received. TickerID / TickType: ' + str(reqId) + " " + str(tickType))
 
 
     # Functions not related to IB
@@ -345,22 +340,24 @@ class MyThread(threading.Thread):
 
                     if rec['url'] == 'getquote' and record.status != 'pending':
                         self.app.timeStamp()
-                        print('Entered bot get quote:' + str(i) + ' ' + str(self.app.timestamp))
+                        print('Entered bot get quote:' + str(self.app.timestamp))
                         contract = ContractSamples.USStock()
                         contract.exchange = rec['exchange']
                         contract.symbol = rec['symbol']
                         contract.currency = rec['currency']
-                        # self.app.reqContractDetails(self.app.timestamp, contract)
-                        # Tick types
-                        self.app.reqMktData(self.app.timestamp, contract, "", False, False, [])
                         try:
                             record.status = "pending"
                             record.req_id = self.app.timestamp
                             record.save()
                         except:
-                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz6'
+                            error = 'Trading.py. Update Model query error. On GetQuote. Code: 99oozz6'
                             print(error)
                             self.log.error(error)
+
+                        # self.app.reqContractDetails(self.app.timestamp, contract)
+                        # tickerId, contract, ticks list, snapshot, snapshot, list
+                        # https://interactivebrokers.github.io/tws-api/classIBApi_1_1EClient.html#a7a19258a3a2087c07c1c57b93f659b63
+                        self.app.reqMktData(self.app.timestamp, contract, "", False, False, [])
 
                         # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Classes/ApiManager.cs
                         # iBClient.ClientSocket.reqMktData(requestId, contract, "", true, false, null);
