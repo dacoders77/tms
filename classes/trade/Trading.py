@@ -105,7 +105,7 @@ class TestApp(EWrapper, EClient):
             record.status = 'processed'
             record.save()
         except:
-            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz'
+            error = 'Trading.py. Update Model query error. Code: 99oozz'
             print(error)
             self.log.error(error)
 
@@ -119,7 +119,7 @@ class TestApp(EWrapper, EClient):
             record.status = 'processed'
             record.save()
         except:
-            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz2'
+            error = 'Trading.py. Update Model query error. Code: 78kkpp'
             print(error)
             self.log.error(error)
 
@@ -135,7 +135,7 @@ class TestApp(EWrapper, EClient):
             record.status = 'processed'
             record.save()
         except:
-            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99uuyy5'
+            error = 'Trading.py. Update Model query error. Code: 99uuyy5'
             print(error)
             self.log.error(error)
 
@@ -144,26 +144,25 @@ class TestApp(EWrapper, EClient):
         print(account)
         print(contract) # + " " + contract.secType + " " + contract.exchange + " " + contract.currency
 
-    # Called from reqPositionsMulti
-    def positionMulti(self, reqId: int, account: str, modelCode: str,
-                      contract: Contract, pos: float, avgCost: float):
+    # Called from reqPositionsMulti.
+    # Will be executed several time is more than one position
+    def positionMulti(self, reqId: int, account: str, modelCode: str, contract: Contract, pos: float, avgCost: float):
         super().positionMulti(reqId, account, modelCode, contract, pos, avgCost)
         print("PositionMulti event. RequestId:", reqId, "Account:", account,
               "ModelCode:", modelCode, "Symbol:", contract.symbol, "SecType:",
               contract.secType, "Currency:", contract.currency, ",Position:",
               pos, "AvgCost:", avgCost)
-        # Make positions array
-        # self.positionsArray.append([contract.symbol, pos]) # 2d array
+        # Add a position to dictionary Symbol/Volume
         self.positionsDict[contract.symbol] = pos
 
-    # When reqPositionsMulty finishes sending events, this is the final evet
+    # When reqPositionsMulty finishes sending events, this is the final event
     def positionMultiEnd(self, reqId: int):
         super().positionMultiEnd(reqId)
         print("PositionMultiEnd. Finished sending positions. RequestId:", reqId)
 
         if self.positionSymbol in self.positionsDict.keys():
             print('Position volume: ' + str(self.positionsDict[self.positionSymbol]))
-            positionVolume = self.positionsDict[self.positionSymbol]
+            positionVolume = int(self.positionsDict[self.positionSymbol]) # Get rid of decimal places
         else:
             print('Ticker symbol is not present. Output all positions')
             positionVolume = "No position found for provided ticker"
@@ -208,7 +207,7 @@ class TestApp(EWrapper, EClient):
                 obj.status = 'processed'
                 obj.save()
             except:
-                error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz3'
+                error = 'Trading.py. Update Model query error. Code: 99oozz3'
                 print(error)
                 self.log.error(error)
 
@@ -280,6 +279,7 @@ class MyThread(threading.Thread):
                     print(f"Watch loop: new record id: {record.id}")
                     rec = json.loads(record.request_payload)  # Parse json
 
+                    # Place order
                     if rec['url'] == 'placeorder':
                         self.app.nextOrderId()
                         contract = ContractSamples.USStock()
@@ -299,10 +299,11 @@ class MyThread(threading.Thread):
                             record.req_id = self.app.nextValidOrderId
                             record.save()
                         except:
-                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz4'
+                            error = 'Trading.py. Update Model query error. Code: 99oozz4'
                             print(error)
                             self.log.error(error)
 
+                    # Bot status
                     if rec['url'] == 'botstatus' and record.status != 'pending':
                         self.app.timeStamp()
                         print('Entered bot status: ' + str(i) + ' ' + str(self.app.timestamp))
@@ -316,7 +317,7 @@ class MyThread(threading.Thread):
                             record.req_id = self.app.timestamp
                             record.save()
                         except:
-                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz5'
+                            error = 'Trading.py. Update Model query error. Code: 99oozz5'
                             print(error)
                             self.log.error(error)
 
@@ -332,12 +333,13 @@ class MyThread(threading.Thread):
                             record.req_id = self.app.timestamp
                             record.save()
                         except:
-                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 26ooutt'
+                            error = 'Trading.py. Update Model query error. Code: 26ooutt'
                             print(error)
                             self.log.error(error)
 
                         self.app.reqPositionsMulti(self.app.timestamp, "", "")
 
+                    # Get quote
                     if rec['url'] == 'getquote' and record.status != 'pending':
                         self.app.timeStamp()
                         print('Entered bot get quote:' + str(self.app.timestamp))
@@ -365,6 +367,7 @@ class MyThread(threading.Thread):
                         # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Form1.cs
                         # ibClient.TickPrice += IbClient_TickPrice; // reqMarketData. EWrapper Interface
 
+                    # Cancel all
                     if rec['url'] == 'cancelall' and record.status != 'pending':
                         self.app.timeStamp()
                         print('Entered cancel all:' + str(i) + ' ' + str(self.app.timestamp))
@@ -375,7 +378,7 @@ class MyThread(threading.Thread):
                             record.response_payload = 'cancel all ok'
                             record.save()
                         except:
-                            error = 'Trading.py. Update Model query error. Most likely - no MYSQL connection. Code: 99oozz7'
+                            error = 'Trading.py. Update Model query error. Code: 99oozz7'
                             print(error)
                             self.log.error(error)
 
