@@ -1,8 +1,6 @@
 import logging
 import time
 from ib.models import Log
-from pprint import pprint
-
 
 # Customized logging handler that puts logs to the database
 class DbLogger(logging.Handler):

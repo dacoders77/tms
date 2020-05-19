@@ -12,7 +12,7 @@ import datetime
 from ib.models import Signal
 
 import sys
-sys.path.insert(1, 'classes/')  # Path to DbLogger.py # Works good
+sys.path.insert(1, 'classes/')  # Path to DbLogger.py
 from DbLogger import DbLogger
 
 class PlaceOrder:
@@ -25,9 +25,10 @@ class PlaceOrder:
 
     @staticmethod
     def botstatus(request):
+        print("Entered botstatus")
 
-        PlaceOrder.SetupLogger('error from bot status')
-
+        #PlaceOrder.SetupLogger('RequestController.py. Entered botstatus')
+        # logging.debug("RequestController.py") # Works good
 
         # If there are pending tasks active
         if PlaceOrder.isLock(request): return HttpResponse(PlaceOrder.errorMessage)
@@ -36,16 +37,26 @@ class PlaceOrder:
             "url": "botstatus"
         })
 
-        # Add a record to bd
+        # Add a record to bd. Keep the whole added record in res
         res = PlaceOrder.store(requestPayload)
 
+        # 1. Spin loop for 20 sec
+        # 2. If the response is not received (record.response_payload != None) ->
+        # 3. Show the current HTTP error message
+        # 4. Update the same record's status to "eexpired"
+        # 5. And keep on going ..
+
         # loop here. Wait 20 sec
-        for i in range(20):
+        for i in range(10):
             record = Signal.objects.get(id=res.id)
             print(record)
             if record.response_payload != None:
                 return HttpResponse('Bot time: ' + str(datetime.datetime.now()) + '<br> Status: ' + record.response_payload)
             time.sleep(1)
+
+        # Update status to expired
+        print("Update status to expired")
+        PlaceOrder.update(res.id)
 
         return HttpResponse('Bot status timeout error. Response from the exchange has not been received within 10 seconds. ' + str(datetime.datetime.now()))
 
@@ -141,7 +152,6 @@ class PlaceOrder:
 
     @staticmethod
     def getpositions(request, symbol=""):
-
         # If there are pending tasks active
         if PlaceOrder.isLock(request): return HttpResponse(PlaceOrder.errorMessage)
 
@@ -176,13 +186,23 @@ class PlaceOrder:
 
     @staticmethod
     def store(requestPayload):
-
         try:
             return Request.store(requestPayload)
         except:
-            error = 'RequestController.py. Update Model query error. Most likely - no MYSQL connection. Code: 43ee'
+            error = 'RequestController.py. Update Model query error. Code: 43ee'
             print(error)
             #self.log.error(error)
+
+    @staticmethod
+    def update(id):
+        try:
+            # logging.debug(id)
+            return Request.update(id)
+        except:
+            error = 'RequestController.py. Update Model query error. Code: 43dd'
+            print(error)
+            logging.debug("RequestController.py. " + error)
+
 
     @staticmethod
     def SetupLogger(error):

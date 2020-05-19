@@ -228,7 +228,7 @@ class TestApp(EWrapper, EClient):
     def main(self):
         # Logger settings
         SetupLogger(self)
-        logging.debug("From def main. now is %s", datetime.datetime.now())
+        logging.debug("Trading.py. From def main. now is %s", datetime.datetime.now())
         logging.getLogger().setLevel(logging.ERROR)  # logging.INFO
 
         try:
