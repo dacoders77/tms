@@ -217,7 +217,9 @@ class PlaceOrder:
             time.sleep(1)
 
         # Update status to expired if no response from trading script
-        PlaceOrder.update(res.id)
+        # Spinned the loop but no response
+        if record.response_payload != None:
+            PlaceOrder.update(res.id)
 
     # Delete. Moved to wsgi.py
     #@staticmethod
