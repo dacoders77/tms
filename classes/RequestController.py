@@ -16,8 +16,6 @@ class PlaceOrder:
 
     errorMessage = 'Error: Request in progress' + str(datetime.datetime.now())
     timeOutMessage = 'Bot status timeout error. Response from the exchange has not been received within 10 seconds. ' + str(datetime.datetime.now())
-    code = False
-    payload = "Empty payload"
 
     @staticmethod
     def botstatus(request):
@@ -54,11 +52,8 @@ class PlaceOrder:
             "status": "new"
         })
 
-        # Add a record to bd
         res = PlaceOrder.store(requestPayload)
-
-        PlaceOrder.waitLoop(res)
-        return HttpResponse(PlaceOrder.timeOutMessage)
+        return PlaceOrder.waitLoop(res)
 
     @staticmethod
     def getquote(request, exchange, symbol, currency):
@@ -74,11 +69,8 @@ class PlaceOrder:
             "status": "new"
         })
 
-        # Add a record to bd
         res = PlaceOrder.store(requestPayload)
-
-        PlaceOrder.waitLoop(res)
-        return HttpResponse(PlaceOrder.timeOutMessage)
+        return PlaceOrder.waitLoop(res)
 
     @staticmethod
     def cancelallorders(request):
@@ -90,11 +82,8 @@ class PlaceOrder:
             "url": "cancelall"
         })
 
-        # Add a record to bd
         res = PlaceOrder.store(requestPayload)
-
-        PlaceOrder.waitLoop(res)
-        return HttpResponse(PlaceOrder.timeOutMessage)
+        return PlaceOrder.waitLoop(res)
 
     @staticmethod
     def getpositions(request, symbol=""):
@@ -106,11 +95,8 @@ class PlaceOrder:
             "symbol": symbol
         })
 
-        # Add a record to bd
         res = PlaceOrder.store(requestPayload)
-
-        PlaceOrder.waitLoop(res)
-        return HttpResponse(PlaceOrder.timeOutMessage)
+        return PlaceOrder.waitLoop(res)
 
     @staticmethod
     def isLock():
