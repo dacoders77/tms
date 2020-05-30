@@ -165,7 +165,7 @@ class TestApp(EWrapper, EClient):
             positionVolume = int(self.positionsDict[self.positionSymbol]) # Get rid of decimal places
         else:
             print('Ticker symbol is not present. Output all positions')
-            positionVolume = "No position found for provided ticker"
+            positionVolume = "0"
             # If no symbol specified - output the whole dictionary
             positionVolume = positionVolume if self.positionSymbol != "" else self.positionsDict
 
