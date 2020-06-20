@@ -15,7 +15,13 @@ from ib.models import Signal
 class PlaceOrder:
 
     errorMessage = 'Error: Request in progress' + str(datetime.datetime.now())
-    timeOutMessage = 'Bot status timeout error. Response from the exchange has not been received within 10 seconds. ' + str(datetime.datetime.now())
+    #timeOutMessage = ' ' + str(datetime.datetime.now())
+
+    timeOutMessage = json.dumps(
+        {
+            "time": str(datetime.datetime.now()),
+            "error": "Bot status timeout error. Response from the exchange has not been received within 10 seconds."
+        })
 
     @staticmethod
     def botstatus(request):
@@ -131,7 +137,8 @@ class PlaceOrder:
             record = Signal.objects.get(id=res.id)
             print(record)
             if record.response_payload != None:
-                return HttpResponse('Bot time: ' + str(datetime.datetime.now()) + '<br> Payload: ' + record.response_payload)
+                # return HttpResponse('Bot time: ' + str(datetime.datetime.now()) + '<br> Payload: ' + record.response_payload)
+                return HttpResponse(record.response_payload)
             time.sleep(1)
 
         PlaceOrder.update(res.id)

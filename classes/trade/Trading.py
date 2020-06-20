@@ -92,10 +92,27 @@ class TestApp(EWrapper, EClient):
     def orderStatus(self, orderId: OrderId, status: str, filled: float, remaining: float, avgFillPrice: float, permId: int,
                     parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
         super().orderStatus(orderId, status, filled, remaining, avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld, mktCapPrice)
-        response =  "OrderStatus. Id:", orderId, "Status:", status, "Filled:", filled, "Remaining:", \
-                    remaining, "AvgFillPrice:", avgFillPrice, "PermId:", permId, "ParentId:", parentId,\
-                    "LastFillPrice:", lastFillPrice, "ClientId:", clientId, "WhyHeld:", whyHeld, \
-                    "MktCapPrice:", mktCapPrice
+        # response =  "OrderStatus. Id:", orderId, "Status:", status, "Filled:", filled, "Remaining:", \
+        #             remaining, "AvgFillPrice:", avgFillPrice, "PermId:", permId, "ParentId:", parentId,\
+        #             "LastFillPrice:", lastFillPrice, "ClientId:", clientId, "WhyHeld:", whyHeld, \
+        #             "MktCapPrice:", mktCapPrice
+
+        response = json.dumps(
+            {
+                "time": str(datetime.datetime.now()),
+                "OrderStatus. Id:": orderId,
+                "Status:": status,
+                "Filled:": filled,
+                "Remaining:": remaining,
+                "AvgFillPrice:": avgFillPrice,
+                "PermId:": permId,
+                "ParentId:": parentId,
+                "LastFillPrice:": lastFillPrice,
+                "ClientId:": clientId,
+                "WhyHeld:": whyHeld,
+                "MktCapPrice:": mktCapPrice
+        })
+
         print("From order status(Trading.py)" + str(response))
 
         # Update response field
@@ -109,13 +126,17 @@ class TestApp(EWrapper, EClient):
             print(error)
             self.log.error(error)
 
-    # Called on reqContractDetails
+    # Called on reqContractDetails. Botstatus
     def contractDetails(self, reqId,  contractDetails: ContractDetails):
         print(f"Contract details reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
         # Update response field
         try:
             record = Signal.objects.get(req_id=self.timestamp)
-            record.response_payload = 'alive'  # contractDetails.liquidHours
+            record.response_payload = json.dumps(
+                {
+                "time": str(datetime.datetime.now()),
+                "botstatus": "alive"
+                })
             record.status = 'processed'
             record.save()
         except:
@@ -125,7 +146,7 @@ class TestApp(EWrapper, EClient):
 
         self.printinstance(contractDetails)
 
-    # Called from reqPositions
+    # Called from reqPositions / Not used?
     def position(self, reqId, account:str, contract:Contract, position:float):
         print(f"Positions reqId(from TWS)/DB ID: {reqId} / {self.timestamp}")
         # Update response field
@@ -144,8 +165,8 @@ class TestApp(EWrapper, EClient):
         print(account)
         print(contract) # + " " + contract.secType + " " + contract.exchange + " " + contract.currency
 
-    # Called from reqPositionsMulti.
-    # Will be executed several time is more than one position
+    # Called from reqPositionsMulti / Get positions
+    # Will be executed several times is more than one position
     def positionMulti(self, reqId: int, account: str, modelCode: str, contract: Contract, pos: float, avgCost: float):
         super().positionMulti(reqId, account, modelCode, contract, pos, avgCost)
         print("PositionMulti event. RequestId:", reqId, "Account:", account,
@@ -165,7 +186,11 @@ class TestApp(EWrapper, EClient):
             positionVolume = int(self.positionsDict[self.positionSymbol]) # Get rid of decimal places
         else:
             print('Ticker symbol is not present. Output all positions')
-            positionVolume = "0"
+            positionVolume = json.dumps(
+            {
+                "time": str(datetime.datetime.now()),
+                "positions": 0
+            })
             # If no symbol specified - output the whole dictionary
             positionVolume = positionVolume if self.positionSymbol != "" else self.positionsDict
 
@@ -191,7 +216,7 @@ class TestApp(EWrapper, EClient):
         currentTime = datetime.datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S")
         print("from currentTime(). CurrentTime:", currentTime)
 
-    # Called on reqMktData
+    # Called on reqMktData / Get quote
     def tickPrice(self, reqId: TickerId, tickType: TickType, price: float, attrib: TickAttrib):
         super().tickPrice(reqId, tickType, price, attrib)
         #print("TickPrice(JKJB). TickerId:", reqId, "tickType:", tickType, "Price:", price, "CanAutoExecute:", attrib.canAutoExecute, "PastLimit:", attrib.pastLimit, end=' ')
@@ -203,7 +228,11 @@ class TestApp(EWrapper, EClient):
             TestApp.cancelMktData(self, reqId) # Cancel subscription when tick type 68 received
             try:
                 obj = Signal.objects.get(req_id=self.timestamp)
-                obj.response_payload = price
+                obj.response_payload = json.dumps(
+                    {
+                        "time": str(datetime.datetime.now()),
+                        "price": price
+                    })
                 obj.status = 'processed'
                 obj.save()
             except:
@@ -374,7 +403,11 @@ class MyThread(threading.Thread):
                         try:
                             record.status = 'processed'
                             record.req_id = self.app.timestamp
-                            record.response_payload = 'cancel all ok'
+                            record.response_payload = json.dumps(
+                                {
+                                    "time": str(datetime.datetime.now()),
+                                    "response": "cancel all ok"
+                                })
                             record.save()
                         except:
                             error = 'Trading.py. Update Model query error. Code: 99oozz7'
