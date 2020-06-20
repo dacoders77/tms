@@ -244,7 +244,6 @@ class TestApp(EWrapper, EClient):
             print("After connection attempt: serverVersion: %s connectionTime: %s" % (app.serverVersion(), app.twsConnectionTime()))
             app.reqCurrentTime()
 
-
             # Switch to live (1) frozen (2) delayed (3) delayed frozen (4).
             app.reqMarketDataType(MarketDataTypeEnum.DELAYED)
             # app.reqMarketDataType(MarketDataTypeEnum.REALTIME)
