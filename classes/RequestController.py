@@ -138,11 +138,11 @@ class PlaceOrder:
             print(record)
             if record.response_payload != None:
                 # return HttpResponse('Bot time: ' + str(datetime.datetime.now()) + '<br> Payload: ' + record.response_payload)
-                return HttpResponse(record.response_payload)
+                return HttpResponse(record.response_payload, content_type="application/json")
             time.sleep(1)
 
         PlaceOrder.update(res.id)
-        return HttpResponse(PlaceOrder.timeOutMessage)
+        return HttpResponse(PlaceOrder.timeOutMessage, content_type="application/json")
 
     def __delete__(self):
         return HttpResponse("")
