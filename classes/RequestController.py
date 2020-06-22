@@ -18,10 +18,10 @@ class PlaceOrder:
     #timeOutMessage = ' ' + str(datetime.datetime.now())
 
     timeOutMessage = json.dumps(
-        {
+        [{
             "time": str(datetime.datetime.now()),
             "error": "Bot status timeout error. Response from the exchange has not been received within 10 seconds."
-        })
+        }])
 
     @staticmethod
     def botstatus(request):

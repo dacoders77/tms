@@ -133,10 +133,10 @@ class TestApp(EWrapper, EClient):
         try:
             record = Signal.objects.get(req_id=self.timestamp)
             record.response_payload = json.dumps(
-                {
+                [{
                 "time": str(datetime.datetime.now()),
                 "botstatus": "alive"
-                })
+                }])
             record.status = 'processed'
             record.save()
         except:
