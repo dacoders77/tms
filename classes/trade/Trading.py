@@ -132,11 +132,10 @@ class TestApp(EWrapper, EClient):
         # Update response field
         try:
             record = Signal.objects.get(req_id=self.timestamp)
-            record.response_payload = json.dumps(
-                [{
-                "time": str(datetime.datetime.now()),
-                "botstatus": "alive"
-                }])
+            record.response_payload = json.dumps({
+                "success": True,
+                "response": "alive"
+            })
             record.status = 'processed'
             record.save()
         except:
@@ -183,14 +182,16 @@ class TestApp(EWrapper, EClient):
 
         if self.positionSymbol in self.positionsDict.keys():
             print('Position volume: ' + str(self.positionsDict[self.positionSymbol]))
-            positionVolume = int(self.positionsDict[self.positionSymbol]) # Get rid of decimal places
-        else:
-            print('Ticker symbol is not present. Output all positions')
-            positionVolume = json.dumps(
-            {
-                "time": str(datetime.datetime.now()),
-                "positions": 0
+            positionVolume = json.dumps({
+                'success': True,
+                'response': int(self.positionsDict[self.positionSymbol]) # Get rid of decimal places
             })
+        else:
+            positionVolume = json.dumps({
+                'success': False,
+                'response': 'Ticker symbol \'' +  self.positionSymbol + '\' is not present. Output all positions'
+            })
+            print(positionVolume)
             # If no symbol specified - output the whole dictionary
             positionVolume = positionVolume if self.positionSymbol != "" else self.positionsDict
 
@@ -228,11 +229,10 @@ class TestApp(EWrapper, EClient):
             TestApp.cancelMktData(self, reqId) # Cancel subscription when tick type 68 received
             try:
                 obj = Signal.objects.get(req_id=self.timestamp)
-                obj.response_payload = json.dumps(
-                    {
-                        "time": str(datetime.datetime.now()),
-                        "price": price
-                    })
+                obj.response_payload = json.dumps({
+                    "success": True,
+                    "response": price
+                })
                 obj.status = 'processed'
                 obj.save()
             except:

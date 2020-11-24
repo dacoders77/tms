@@ -10,25 +10,50 @@ import time
 import datetime
 from django.db.models import Q
 from ib.models import Signal
+import types
+#
+def jflush(success, msg=None):
 
+    # Function for parsing json
+    def is_json(text):
+        try:
+            if isinstance(text, bool):
+                return False
+            json_object = json.loads(text)
+        except ValueError as e:
+            return False
+        return json_object
+
+    # Get number of arguments
+    argc = len(locals())
+
+    # Decode json, if need
+    if is_json(success): success = is_json(success)
+
+    # Make sure success and time will be at the beginning
+    flush = {'success': None, 'time': str(datetime.datetime.now())}
+
+    # Start building data for flushing
+    flush.update(success if isinstance(success, dict) and 'success' in success else {'success': success})
+
+    # Deal with 2nd-argument, if given
+    if argc > 1 and msg != None:
+        flush.update(msg if isinstance(msg, dict) else {'response': msg})
+
+    # Flush json-response
+    return HttpResponse(json.dumps(flush), content_type=json)
 
 class PlaceOrder:
 
-    errorMessage = 'Error: Request in progress' + str(datetime.datetime.now())
-    #timeOutMessage = ' ' + str(datetime.datetime.now())
-
-    timeOutMessage = json.dumps(
-        [{
-            "time": str(datetime.datetime.now()),
-            "error": "Bot status timeout error. Response from the exchange has not been received within 10 seconds."
-        }])
+    errorMessage = 'Error: Request in progress'
+    timeOutMessage = "Bot status timeout error. Response from the exchange has not been received within 10 seconds."
 
     @staticmethod
     def botstatus(request):
         logging.debug("Entered bot status. Code: xx88zz.")
 
         # If there are pending tasks active
-        if PlaceOrder.isLock(): return HttpResponse(PlaceOrder.errorMessage)
+        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
 
         requestPayload = json.dumps({
             "url": "botstatus"
@@ -44,7 +69,7 @@ class PlaceOrder:
     def placeorder(request, order_type, exchange, symbol, volume, direction, currency, price=""):
 
         # If there are pending tasks active
-        if PlaceOrder.isLock(): return HttpResponse(PlaceOrder.errorMessage)
+        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
 
         requestPayload = json.dumps({
             "url": "placeorder",
@@ -65,7 +90,7 @@ class PlaceOrder:
     def getquote(request, exchange, symbol, currency):
 
         # If there are pending tasks active
-        if PlaceOrder.isLock(): return HttpResponse(PlaceOrder.errorMessage)
+        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
 
         requestPayload = json.dumps({
             "url": "getquote",
@@ -82,7 +107,7 @@ class PlaceOrder:
     def cancelallorders(request):
 
         # If there are pending tasks active
-        if PlaceOrder.isLock(): return HttpResponse(PlaceOrder.errorMessage)
+        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
 
         requestPayload = json.dumps({
             "url": "cancelall"
@@ -94,7 +119,7 @@ class PlaceOrder:
     @staticmethod
     def getpositions(request, symbol=""):
         # If there are pending tasks active
-        if PlaceOrder.isLock(): return HttpResponse(PlaceOrder.errorMessage)
+        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
 
         requestPayload = json.dumps({
             "url": "getpositions",
@@ -138,11 +163,11 @@ class PlaceOrder:
             print(record)
             if record.response_payload != None:
                 # return HttpResponse('Bot time: ' + str(datetime.datetime.now()) + '<br> Payload: ' + record.response_payload)
-                return HttpResponse(record.response_payload, content_type="application/json")
+                return jflush(record.response_payload)
             time.sleep(1)
 
         PlaceOrder.update(res.id)
-        return HttpResponse(PlaceOrder.timeOutMessage, content_type="application/json")
+        return jflush(False, PlaceOrder.timeOutMessage)
 
     def __delete__(self):
         return HttpResponse("")
