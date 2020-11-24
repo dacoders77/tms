@@ -34,7 +34,7 @@ def jflush(success, msg=None):
     flush = {'success': None, 'time': str(datetime.datetime.now())}
 
     # Start building data for flushing
-    flush.update(success if isinstance(success, dict) and 'success' in success else {'success': success})
+    flush.update(success if isinstance(success, dict) and 'success' in success else {'response': success})
 
     # Deal with 2nd-argument, if given
     if argc > 1 and msg != None:
