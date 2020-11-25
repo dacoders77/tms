@@ -189,7 +189,7 @@ class TestApp(EWrapper, EClient):
         else:
             positionVolume = json.dumps({
                 'success': False,
-                'response': 'Ticker symbol \'' +  self.positionSymbol + '\' is not present. Output all positions'
+                'response': 0
             })
             print(positionVolume)
             # If no symbol specified - output the whole dictionary
