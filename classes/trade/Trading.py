@@ -142,7 +142,7 @@ class TestApp(EWrapper, EClient):
                 urllib.request.urlopen(url).read()
 
         except:
-            error = 'Trading.py. orderId ' + orderId + ' not found'
+            error = 'Trading.py. orderId not found'
             print(error)
             self.log.error(error)
 
