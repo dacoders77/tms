@@ -1,4 +1,5 @@
 import sys
+import urllib.request
 sys.path.insert(1, 'samples/Python/Testbed') # Path to testbed
 import datetime
 import collections
@@ -120,9 +121,28 @@ class TestApp(EWrapper, EClient):
             record = Signal.objects.get(req_id=self.nextValidOrderId)
             record.response_payload = response
             record.status = 'processed'
+            record.order_status = status
             record.save()
+
+            # If order status is "Filled"
+            if record.order_status == "Filled":
+
+                # Load request payload
+                pl = json.loads(record.request_payload)
+
+                # Build url
+                url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjI1ODU5Ig_3D_3D/?' + urllib.parse.urlencode({
+                    'ticker': pl['symbol'],
+                    'direction': pl['direction'],
+                    'currency': pl['currency'],
+                    'volume': pl['volume'],
+                })
+
+                # Make request
+                urllib.request.urlopen(url).read()
+
         except:
-            error = 'Trading.py. Update Model query error. Code: 99oozz'
+            error = 'Trading.py. Record req_id=' + self.nextValidOrderId + ' not found'
             print(error)
             self.log.error(error)
 
