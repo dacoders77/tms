@@ -116,27 +116,36 @@ class TestApp(EWrapper, EClient):
 
         print("From order status(Trading.py)" + str(response))
 
-        for s in Signal.objects.raw('SELECT * FROM ib_signal ORDER BY id DESC LIMIT 1'):
-            print('last: ' + str(s.id) + ' => ' + str(s.req_id) + ', req_id =' + str(self.nextValidOrderId))
-
-        for s in Signal.objects.raw('SELECT * FROM ib_signal WHERE req_id = \'' + str(self.nextValidOrderId) + '\''):
+        # Duplicates may face, so here we count them, and set 'record' to be the most recent `signal` entry
+        found = 0
+        sql = "SELECT * FROM ib_signal WHERE req_id = '" + str(self.nextValidOrderId) + "' ORDER BY id DESC"
+        for s in Signal.objects.raw(sql):
             print('req: ' + str(s.id) + ' => ' + str(s.req_id) + ', req_id =\'' + str(self.nextValidOrderId) + '\'')
+            found = found + 1
+            if found == 1:
+                record = s
 
-        try:
-            record = Signal.objects.get(req_id=self.nextValidOrderId)
-        except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' signal record not found'
+        # If nothing found - log error
+        if found == 0:
+            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' not found'
             print(error)
             self.log.error(error)
 
-        # Update response field
-        if 'record' in locals():
+        # Else
+        else:
+
+            # If more than one found - log error
+            if found > 1:
+                error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' found ' + str(found) + ' duplicates'
+                print(error)
+                self.log.error(error)
+
+            # But anyway deal with first found
             try:
                 record.response_payload = response
                 record.status = 'processed'
-                # record.order_status = status
+                record.order_status = status
                 record.save()
-
             except:
                 error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' response_payload update error'
                 print(error)
@@ -144,7 +153,7 @@ class TestApp(EWrapper, EClient):
 
             try:
                 # If order status is "Filled"
-                if status == "Filled":
+                if record.order_status == "Filled":
 
                     # Load request payload
                     pl = json.loads(record.request_payload)
