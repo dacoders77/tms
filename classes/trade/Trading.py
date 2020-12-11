@@ -116,18 +116,11 @@ class TestApp(EWrapper, EClient):
 
         print("From order status(Trading.py)" + str(response))
 
-        # Update response field
-        try:
-            record = Signal.objects.get(req_id=self.nextValidOrderId)
-            record.response_payload = response
-            record.status = 'processed'
-            # record.order_status = status
-            record.save()
+        for s in Signal.objects.raw('SELECT * FROM ib_signal ORDER BY id DESC LIMIT 1'):
+            print('last: ' + str(s.id) + ' => ' + str(s.req_id) + ', req_id =' + str(self.nextValidOrderId))
 
-        except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' response_payload update error'
-            print(error)
-            self.log.error(error)
+        for s in Signal.objects.raw('SELECT * FROM ib_signal WHERE req_id = \'' + str(self.nextValidOrderId) + '\''):
+            print('req: ' + str(s.id) + ' => ' + str(s.req_id) + ', req_id =\'' + str(self.nextValidOrderId) + '\'')
 
         try:
             record = Signal.objects.get(req_id=self.nextValidOrderId)
@@ -136,28 +129,41 @@ class TestApp(EWrapper, EClient):
             print(error)
             self.log.error(error)
 
-        try:
-            # If order status is "Filled"
-            if status == "Filled":
+        # Update response field
+        if 'record' in locals():
+            try:
+                record.response_payload = response
+                record.status = 'processed'
+                # record.order_status = status
+                record.save()
 
-                # Load request payload
-                pl = json.loads(record.request_payload)
+            except:
+                error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' response_payload update error'
+                print(error)
+                self.log.error(error)
 
-                # Build url
-                url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjI3MTU2Ig_3D_3D/?' + urllib.parse.urlencode({
-                    'ticker': pl['symbol'],
-                    'direction': pl['direction'],
-                    'currency': pl['currency'],
-                    'volume': pl['volume'],
-                    'avgFillPrice': avgFillPrice
-                })
+            try:
+                # If order status is "Filled"
+                if status == "Filled":
 
-                # Make request
-                urllib.request.urlopen(url).read()
-        except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' webhook error'
-            print(error)
-            self.log.error(error)
+                    # Load request payload
+                    pl = json.loads(record.request_payload)
+
+                    # Build url
+                    url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjI3MTU2Ig_3D_3D/?' + urllib.parse.urlencode({
+                        'ticker': pl['symbol'],
+                        'direction': pl['direction'],
+                        'currency': pl['currency'],
+                        'volume': pl['volume'],
+                        'avgFillPrice': avgFillPrice
+                    })
+
+                    # Make request
+                    urllib.request.urlopen(url).read()
+            except:
+                error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' webhook error'
+                print(error)
+                self.log.error(error)
 
     # Called on reqContractDetails. Botstatus
     def contractDetails(self, reqId,  contractDetails: ContractDetails):
