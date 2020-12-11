@@ -118,21 +118,21 @@ class TestApp(EWrapper, EClient):
 
         # Update response field
         try:
-            record = Signal.objects.get(req_id=self.nextValidOrderId)
+            record = Signal.objects.get(req_id=2345)
             record.response_payload = response
             record.status = 'processed'
             # record.order_status = status
             record.save()
 
         except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' response_payload update error'
+            error = 'Trading.py. req_id=' + str(2345) + ' response_payload update error'
             print(error)
             self.log.error(error)
 
         try:
-            record = Signal.objects.get(req_id=self.nextValidOrderId)
+            record = Signal.objects.get(req_id=2345)
         except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' signal record not found'
+            error = 'Trading.py. req_id=' + str(2345) + ' signal record not found'
             print(error)
             self.log.error(error)
 
@@ -155,7 +155,7 @@ class TestApp(EWrapper, EClient):
                 # Make request
                 urllib.request.urlopen(url).read()
         except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' webhook error'
+            error = 'Trading.py. req_id=' + str(2345) + ' webhook error'
             print(error)
             self.log.error(error)
 
