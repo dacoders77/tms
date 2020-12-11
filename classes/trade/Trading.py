@@ -121,9 +121,15 @@ class TestApp(EWrapper, EClient):
             record = Signal.objects.get(req_id=self.nextValidOrderId)
             record.response_payload = response
             record.status = 'processed'
-            record.order_status = status
+            # record.order_status = status
             record.save()
 
+        except:
+            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' response_payload update error'
+            print(error)
+            self.log.error(error)
+
+        try:
             # If order status is "Filled"
             if record.order_status == "Filled":
 
@@ -141,7 +147,6 @@ class TestApp(EWrapper, EClient):
 
                 # Make request
                 urllib.request.urlopen(url).read()
-
         except:
             error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' not found'
             print(error)
