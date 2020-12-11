@@ -131,11 +131,12 @@ class TestApp(EWrapper, EClient):
                 pl = json.loads(record.request_payload)
 
                 # Build url
-                url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjI1ODU5Ig_3D_3D/?' + urllib.parse.urlencode({
+                url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjI3MTU2Ig_3D_3D/?' + urllib.parse.urlencode({
                     'ticker': pl['symbol'],
                     'direction': pl['direction'],
                     'currency': pl['currency'],
                     'volume': pl['volume'],
+                    'avgFillPrice': avgFillPrice
                 })
 
                 # Make request
