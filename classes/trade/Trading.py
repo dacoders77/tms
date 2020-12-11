@@ -130,8 +130,10 @@ class TestApp(EWrapper, EClient):
             self.log.error(error)
 
         try:
+            record = Signal.objects.get(req_id=self.nextValidOrderId)
+
             # If order status is "Filled"
-            if record.order_status == "Filled":
+            if status == "Filled":
 
                 # Load request payload
                 pl = json.loads(record.request_payload)
