@@ -131,7 +131,12 @@ class TestApp(EWrapper, EClient):
 
         try:
             record = Signal.objects.get(req_id=self.nextValidOrderId)
+        except:
+            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' signal record not found'
+            print(error)
+            self.log.error(error)
 
+        try:
             # If order status is "Filled"
             if status == "Filled":
 
@@ -150,7 +155,7 @@ class TestApp(EWrapper, EClient):
                 # Make request
                 urllib.request.urlopen(url).read()
         except:
-            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' not found'
+            error = 'Trading.py. req_id=' + str(self.nextValidOrderId) + ' webhook error'
             print(error)
             self.log.error(error)
 
