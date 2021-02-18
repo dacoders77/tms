@@ -30,6 +30,9 @@ urlpatterns = [
     # http://127.0.0.1:8000/placeorder/limit/nyse/iag/usd/1/buy/2
     path('placeorder/<order_type>/<exchange>/<symbol>/<currency>/<volume>/<direction>/<price>', PlaceOrder.placeorder),
 
+    # Place stop limit order
+    path('placeorder/<order_type>/<exchange>/<symbol>/<currency>/<volume>/<direction>/<price>/<stop_price>', PlaceOrder.placeorder),
+
     # Place market order
     # http://127.0.0.1:8000/placeorder/market/nyse/iag/usd/1/buy
     path('placeorder/<order_type>/<exchange>/<symbol>/<currency>/<volume>/<direction>', PlaceOrder.placeorder),

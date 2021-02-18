@@ -66,12 +66,13 @@ class PlaceOrder:
         return PlaceOrder.waitLoop(res)
 
     @staticmethod
-    def placeorder(request, order_type, exchange, symbol, volume, direction, currency, price=""):
+    def placeorder(request, order_type, exchange, symbol, volume, direction, currency, price="", stop_price=""):
 
         # If there are pending tasks active
         if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
 
-        requestPayload = json.dumps({
+        # Setup props
+        j = {
             "url": "placeorder",
             "order_type": order_type,
             "exchange": exchange,
@@ -81,7 +82,15 @@ class PlaceOrder:
             "price": price,
             "direction": direction,
             "status": "new"
-        })
+        }
+
+        # If stop_price arg is given - append it to props obj
+        if order_type == "stoplimit":
+            if stop_price == "":
+                return jflush(False, 'stop_price argument is not given')
+            j['stop_price'] = stop_price
+
+        requestPayload = json.dumps(j)
 
         res = PlaceOrder.store(requestPayload)
         return PlaceOrder.waitLoop(res)

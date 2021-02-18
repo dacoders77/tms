@@ -367,7 +367,10 @@ class MyThread(threading.Thread):
                             # Place market orders
                             self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
                         else:
-                            self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.LimitOrder(rec['direction'], rec['volume'], rec['price']))
+                            if rec['order_type'] == 'stoplimit':
+                                self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.StopLimit(rec['direction'], rec['volume'], rec['price'], rec['stop_price']))
+                            else:
+                                self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.LimitOrder(rec['direction'], rec['volume'], rec['price']))
 
                         print("Request payload (Trading.py placeorder):" + str(rec))
                         try:
