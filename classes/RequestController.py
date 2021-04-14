@@ -46,7 +46,7 @@ def jflush(success, msg=None):
 class PlaceOrder:
 
     errorMessage = 'Error: Request in progress'
-    timeOutMessage = "Bot status timeout error. Response from the exchange has not been received within 10 seconds."
+    timeOutMessage = "Bot status timeout error. Response from the exchange has not been received within 2 seconds."
 
     @staticmethod
     def botstatus(request):
@@ -66,7 +66,7 @@ class PlaceOrder:
         return PlaceOrder.waitLoop(res)
 
     @staticmethod
-    def placeorder(request, order_type, exchange, symbol, volume, direction, currency, price="", stop_price=""):
+    def placeorder(request, order_type, exchange, symbol, volume, direction, currency, price="", stop_price="", outside=False):
 
         # If there are pending tasks active
         if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
@@ -89,6 +89,10 @@ class PlaceOrder:
             if stop_price == "":
                 return jflush(False, 'stop_price argument is not given')
             j['stop_price'] = stop_price
+
+        # If outside arg is given as non-False - append it as True to props obj
+        if outside:
+            j['outsideRth'] = True
 
         requestPayload = json.dumps(j)
 
@@ -167,7 +171,7 @@ class PlaceOrder:
     # Wait for 10 sec until the response for the trading script is written to DB
     @staticmethod
     def waitLoop(res):
-        for i in range(10):
+        for i in range(2):
             record = Signal.objects.get(id=res.id)
             print(record)
             if record.response_payload != None:

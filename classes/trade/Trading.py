@@ -363,15 +363,21 @@ class MyThread(threading.Thread):
                         contract.symbol = rec['symbol']
                         contract.currency = rec['currency']
 
+                        # Prepare order
                         if rec['order_type'] == 'market':
+                            _order = OrderSamples.MarketOrder(rec['direction'], rec['volume'])
                             # Place market orders
-                            self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.MarketOrder(rec['direction'], rec['volume']))
                         else:
                             if rec['order_type'] == 'stoplimit':
-                                self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.StopLimit(rec['direction'], rec['volume'], rec['price'], rec['stop_price']))
+                                _order = OrderSamples.StopLimit(rec['direction'], rec['volume'], rec['price'], rec['stop_price'])
                             else:
-                                self.app.placeOrder(self.app.nextValidOrderId, contract, OrderSamples.LimitOrder(rec['direction'], rec['volume'], rec['price']))
+                                _order = OrderSamples.LimitOrder(rec['direction'], rec['volume'], rec['price'])
 
+                        # Setup OutsideRth flag
+                        if rec['outsideRth']:
+                            _order.outsideRth = True
+
+                        self.app.placeOrder(self.app.nextValidOrderId, contract, _order)
                         print("Request payload (Trading.py placeorder):" + str(rec))
                         try:
                             record.status = "pending"
