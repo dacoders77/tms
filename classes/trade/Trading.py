@@ -495,7 +495,7 @@ class MyThread(threading.Thread):
                             self.log.error(error)
 
                         # self.app.reqAccountSummary(self.app.timestamp, "All", AccountSummaryTags.GetAllTags())
-                        self.app.reqPnL(self.app.timestamp, "", "")
+                        self.app.reqPnL(self.app.timestamp, "U3164907", "")
 
                     # Cancel all
                     if rec['url'] == 'cancelall' and record.status != 'pending':
