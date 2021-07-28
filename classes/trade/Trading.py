@@ -374,7 +374,7 @@ class MyThread(threading.Thread):
                                 _order = OrderSamples.LimitOrder(rec['direction'], rec['volume'], rec['price'])
 
                         # Setup OutsideRth flag
-                        if rec['outsideRth']:
+                        if 'outsideRth' in rec and rec['outsideRth']:
                             _order.outsideRth = True
 
                         self.app.placeOrder(self.app.nextValidOrderId, contract, _order)

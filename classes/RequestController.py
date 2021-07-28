@@ -171,7 +171,7 @@ class PlaceOrder:
     # Wait for 10 sec until the response for the trading script is written to DB
     @staticmethod
     def waitLoop(res):
-        for i in range(2):
+        for i in range(5):
             record = Signal.objects.get(id=res.id)
             print(record)
             if record.response_payload != None:
