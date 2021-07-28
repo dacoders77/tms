@@ -143,6 +143,18 @@ class PlaceOrder:
         return PlaceOrder.waitLoop(res)
 
     @staticmethod
+    def pnl(request):
+        # If there are pending tasks active
+        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
+
+        requestPayload = json.dumps({
+            "url": "pnl"
+        })
+
+        res = PlaceOrder.store(requestPayload)
+        return PlaceOrder.waitLoop(res)
+
+    @staticmethod
     def isLock():
         if Signal.objects.filter(Q(status='pending') | Q(status='new')).count() != 0:
             return True

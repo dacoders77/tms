@@ -335,6 +335,36 @@ class TestApp(EWrapper, EClient):
         except:
             raise
 
+    def pnl(self, reqId: int, dailyPnL: float, unrealizedPnL: float, realizedPnL: float):
+
+        # Call parent
+        super().pnl(reqId, dailyPnL, unrealizedPnL, realizedPnL)
+
+        # Build response
+        response = json.dumps({
+            "dailyPnL": dailyPnL,
+            "unrealizedPnL:": unrealizedPnL,
+            "realizedPnl:": realizedPnL,
+        })
+
+        # Print response
+        print("From PnL (Trading.py)" + str(response))
+
+        # Cancel PnL subscription
+        TestApp.cancelPnL(self, reqId)
+
+        try:
+            obj = Signal.objects.get(req_id=reqId)
+            obj.response_payload = json.dumps({
+                "success": True,
+                "response": response
+            })
+            obj.status = 'processed'
+            obj.save()
+        except:
+            error = 'Trading.py. Update Model query error. Code: 99oozz3'
+            print(error)
+            self.log.error(error)
 
 # Thread class. Use: import threading. Inherit from threading.Thread
 class MyThread(threading.Thread):
@@ -445,12 +475,27 @@ class MyThread(threading.Thread):
                         # tickerId, contract, ticks list, snapshot, snapshot, list
                         # https://interactivebrokers.github.io/tws-api/classIBApi_1_1EClient.html#a7a19258a3a2087c07c1c57b93f659b63
                         self.app.reqMktData(self.app.timestamp, contract, "", False, False, [])
-
                         # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Classes/ApiManager.cs
                         # iBClient.ClientSocket.reqMktData(requestId, contract, "", true, false, null);
 
                         # https://github.com/dacoders77/tbr/blob/master/!%D1%81%23/TBR_noform/Form1.cs
                         # ibClient.TickPrice += IbClient_TickPrice; // reqMarketData. EWrapper Interface
+
+                    # Get summary
+                    if rec['url'] == 'pnl' and record.status != 'pending':
+                        self.app.timeStamp()
+                        print('Entered bot get pnl:' + str(self.app.timestamp))
+                        try:
+                            record.status = "pending"
+                            record.req_id = self.app.timestamp
+                            record.save()
+                        except:
+                            error = 'Trading.py. Update Model query error. On summary. Code: 99oozz611'
+                            print(error)
+                            self.log.error(error)
+
+                        # self.app.reqAccountSummary(self.app.timestamp, "All", AccountSummaryTags.GetAllTags())
+                        self.app.reqPnL(self.app.timestamp, "", "")
 
                     # Cancel all
                     if rec['url'] == 'cancelall' and record.status != 'pending':
