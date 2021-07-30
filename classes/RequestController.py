@@ -146,8 +146,8 @@ class PlaceOrder:
     def pnl(request, type=""):
 
         # Validate type arg
-        if type != "dailyPnL" and type != "unrealizedPnL" and type != "realizedPnL":
-            return jflush(False, "Invalid type specified. Valid types are: dailyPnL, unrealizedPnL and realizedPnL")
+        if type != "daily" and type != "unrealized" and type != "realized":
+            return jflush(False, "Invalid type specified. Valid types are: daily, unrealized and realized")
 
         # If there are pending tasks active
         if PlaceOrder.isLock():
