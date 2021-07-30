@@ -52,11 +52,12 @@ urlpatterns = [
     # http://127.0.0.1:8000/getpositions
     path('getpositions', PlaceOrder.getpositions),
 
+    # Get positions for symbol
+    # http://127.0.0.1:8000/getpositions/ibkr
+    path('getpositions/<symbol>', PlaceOrder.getpositions),
+
     # Get PnL
     # http://127.0.0.1:8000/pnl
     path('pnl', PlaceOrder.pnl),
-
-    # Get positions for symbol
-    # http://127.0.0.1:8000/getpositions/ibkr
-    path('getpositions/<symbol>', PlaceOrder.getpositions)
+    path('pnl/<type>', PlaceOrder.pnl),
 ]

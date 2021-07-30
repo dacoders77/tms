@@ -143,15 +143,23 @@ class PlaceOrder:
         return PlaceOrder.waitLoop(res)
 
     @staticmethod
-    def pnl(request):
+    def pnl(request, type=""):
+
+        # Validate type arg
+        if type != "dailyPnL" and type != "unrealizedPnL" and type != "realizedPnL":
+            return jflush(False, "Invalid type specified. Valid types are: dailyPnL, unrealizedPnL and realizedPnL")
+
         # If there are pending tasks active
-        if PlaceOrder.isLock(): return jflush(False, PlaceOrder.errorMessage)
+        if PlaceOrder.isLock():
+            return jflush(False, PlaceOrder.errorMessage)
 
-        requestPayload = json.dumps({
-            "url": "pnl"
-        })
+        # Prepare payload
+        requestPayload = json.dumps({"url": "pnl", "type": type})
 
+        # Save request into db
         res = PlaceOrder.store(requestPayload)
+
+        # Wait until is processed
         return PlaceOrder.waitLoop(res)
 
     @staticmethod
